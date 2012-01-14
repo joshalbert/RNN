@@ -1,0 +1,2970 @@
+
+;; Function W_init (W_init)
+
+(note 1 0 3 NOTE_INSN_DELETED)
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY (fallthru)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 5 2 6 2 node.h:39 (set (reg:SI 58 [ debug.69 ])
+        (mem/c/i:SI (symbol_ref:DI ("debug") [flags 0x2]  <var_decl 0x7f2f6c4b8b40 debug>) [0 debug+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 6 5 7 2 node.h:39 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 58 [ debug.69 ])
+            (const_int 0 [0x0]))) 2 {*cmpsi_ccno_1} (nil))
+
+(jump_insn 7 6 8 2 node.h:39 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 11)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 11)
+;; End of basic block 2 -> ( 3 4)
+
+;; Succ edge  3 (fallthru)
+;; Succ edge  4
+
+;; Start of basic block ( 2) -> 3
+;; Pred edge  2 (fallthru)
+(note 8 7 9 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 9 8 10 3 node.h:39 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <string_cst 0x7f2f6b9d3508>)) 89 {*movdi_1_rex64} (nil))
+
+(call_insn 10 9 11 3 node.h:39 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f2f6d752700 __builtin_puts>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:DI 5 di))
+        (nil)))
+;; End of basic block 3 -> ( 4)
+
+;; Succ edge  4 (fallthru)
+
+;; Start of basic block ( 2 3) -> 4
+;; Pred edge  2
+;; Pred edge  3 (fallthru)
+(code_label 11 10 12 4 2 "" [1 uses])
+
+(note 12 11 13 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 13 12 14 4 node.h:41 (set (reg:SI 59 [ D.70 ])
+        (mem/c/i:SI (symbol_ref:DI ("D")  <var_decl 0x7f2f6c4b8e60 D>) [0 D+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 14 13 15 4 node.h:41 (set (reg:DI 60 [ D.49971 ])
+        (zero_extend:DI (reg:SI 59 [ D.70 ]))) 123 {zero_extendsidi2_rex64} (nil))
+
+(insn 15 14 16 4 node.h:41 (set (reg:SI 61 [ network_size.71 ])
+        (mem/c/i:SI (symbol_ref:DI ("network_size") [flags 0x2]  <var_decl 0x7f2f6c4b8aa0 network_size>) [0 network_size+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 16 15 17 4 node.h:41 (set (reg:DI 62 [ D.49973 ])
+        (zero_extend:DI (reg:SI 61 [ network_size.71 ]))) 123 {zero_extendsidi2_rex64} (nil))
+
+(insn 17 16 18 4 node.h:41 (parallel [
+            (set (reg:DI 63 [ D.49974 ])
+                (mult:DI (reg:DI 60 [ D.49971 ])
+                    (reg:DI 62 [ D.49973 ])))
+            (clobber (reg:CC 17 flags))
+        ]) 334 {*muldi3_1} (nil))
+
+(insn 18 17 19 4 node.h:41 (parallel [
+            (set (reg:DI 64 [ D.49975 ])
+                (ashift:DI (reg:DI 63 [ D.49974 ])
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) 489 {*ashldi3_1_rex64} (nil))
+
+(insn 19 18 20 4 node.h:41 (set (reg:DI 5 di)
+        (reg:DI 64 [ D.49975 ])) 89 {*movdi_1_rex64} (nil))
+
+(call_insn 20 19 21 4 node.h:41 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("malloc") [flags 0x41]  <function_decl 0x7f2f6d770700 malloc>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (expr_list:REG_DEP_TRUE (use (reg:DI 5 di))
+        (nil)))
+
+(insn 21 20 22 4 node.h:41 (set (reg/f:DI 86)
+        (reg:DI 0 ax)) 89 {*movdi_1_rex64} (expr_list:REG_NOALIAS (reg/f:DI 86)
+        (nil)))
+
+(insn 22 21 23 4 node.h:41 (set (reg/f:DI 65 [ D.49976 ])
+        (reg/f:DI 86)) 89 {*movdi_1_rex64} (nil))
+
+(insn 23 22 24 4 node.h:41 (set (reg/f:DI 66 [ W.72 ])
+        (reg/f:DI 65 [ D.49976 ])) 89 {*movdi_1_rex64} (nil))
+
+(insn 24 23 25 4 node.h:41 (set (mem/f/c/i:DI (symbol_ref:DI ("W")  <var_decl 0x7f2f6c4b8c80 W>) [0 W+0 S8 A64])
+        (reg/f:DI 66 [ W.72 ])) 89 {*movdi_1_rex64} (nil))
+
+(insn 25 24 71 4 node.h:42 (set (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])
+        (const_int 0 [0x0])) 47 {*movsi_1} (nil))
+
+(jump_insn 71 25 72 4 node.h:42 (set (pc)
+        (label_ref 40)) -1 (nil)
+ -> 40)
+;; End of basic block 4 -> ( 6)
+
+;; Succ edge  6 [100.0%] 
+
+(barrier 72 71 45)
+
+;; Start of basic block ( 6) -> 5
+;; Pred edge  6
+(code_label 45 72 28 5 4 "" [1 uses])
+
+(note 28 45 29 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 29 28 30 5 node.h:44 (set (reg/f:DI 70 [ W.73 ])
+        (mem/f/c/i:DI (symbol_ref:DI ("W")  <var_decl 0x7f2f6c4b8c80 W>) [0 W+0 S8 A64])) 89 {*movdi_1_rex64} (nil))
+
+(insn 30 29 31 5 node.h:44 (set (reg:DI 71 [ D.49979 ])
+        (zero_extend:DI (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                    (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32]))) 123 {zero_extendsidi2_rex64} (nil))
+
+(insn 31 30 32 5 node.h:44 (parallel [
+            (set (reg:DI 72 [ D.49980 ])
+                (ashift:DI (reg:DI 71 [ D.49979 ])
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) 489 {*ashldi3_1_rex64} (nil))
+
+(insn 32 31 33 5 node.h:44 (parallel [
+            (set (reg/f:DI 73 [ D.49981 ])
+                (plus:DI (reg/f:DI 70 [ W.73 ])
+                    (reg:DI 72 [ D.49980 ])))
+            (clobber (reg:CC 17 flags))
+        ]) 253 {*adddi_1} (nil))
+
+(call_insn 33 32 34 5 node.h:44 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("rand") [flags 0x41]  <function_decl 0x7f2f6c515100 rand>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+(insn 34 33 35 5 node.h:44 (set (reg:SI 74 [ D.49982 ])
+        (reg:SI 0 ax)) 47 {*movsi_1} (nil))
+
+(insn 35 34 36 5 node.h:44 (set (reg:DF 75 [ D.49983 ])
+        (float:DF (reg:SI 74 [ D.49982 ]))) 218 {*floatsidf2_sse_interunit} (nil))
+
+(insn 36 35 37 5 node.h:44 (set (reg:DF 87)
+        (mem/u/c/i:DF (symbol_ref/u:DI ("*.LC1") [flags 0x2]) [0 S8 A64])) 104 {*movdf_integer_rex64} (expr_list:REG_EQUAL (const_double:DF 2.147483647e+9 [0x0.fffffffep+31])
+        (nil)))
+
+(insn 37 36 38 5 node.h:44 (set (reg:DF 76 [ D.49984 ])
+        (div:DF (reg:DF 75 [ D.49983 ])
+            (reg:DF 87))) 724 {*fop_df_1_sse} (nil))
+
+(insn 38 37 39 5 node.h:44 (set (mem:DF (reg/f:DI 73 [ D.49981 ]) [0 S8 A64])
+        (reg:DF 76 [ D.49984 ])) 104 {*movdf_integer_rex64} (nil))
+
+(insn 39 38 40 5 node.h:42 (parallel [
+            (set (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                        (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])
+                (plus:SI (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                            (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 252 {*addsi_1} (nil))
+;; End of basic block 5 -> ( 6)
+
+;; Succ edge  6 (fallthru)
+
+;; Start of basic block ( 5 4) -> 6
+;; Pred edge  5 (fallthru)
+;; Pred edge  4 [100.0%] 
+(code_label 40 39 41 6 3 "" [1 uses])
+
+(note 41 40 42 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+(insn 42 41 43 6 node.h:42 (set (reg:SI 67 [ D.74 ])
+        (mem/c/i:SI (symbol_ref:DI ("D")  <var_decl 0x7f2f6c4b8e60 D>) [0 D+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 43 42 44 6 node.h:42 (set (reg:SI 68 [ network_size.75 ])
+        (mem/c/i:SI (symbol_ref:DI ("network_size") [flags 0x2]  <var_decl 0x7f2f6c4b8aa0 network_size>) [0 network_size+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 44 43 46 6 node.h:42 (parallel [
+            (set (reg:SI 69 [ D.49987 ])
+                (mult:SI (reg:SI 67 [ D.74 ])
+                    (reg:SI 68 [ network_size.75 ])))
+            (clobber (reg:CC 17 flags))
+        ]) 333 {*mulsi3_1} (nil))
+
+(insn 46 44 47 6 node.h:42 (set (reg:CC 17 flags)
+        (compare:CC (reg:SI 69 [ D.49987 ])
+            (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                    (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 47 46 48 6 node.h:42 (set (pc)
+        (if_then_else (gtu (reg:CC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 45)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 45)
+;; End of basic block 6 -> ( 5 7)
+
+;; Succ edge  5
+;; Succ edge  7 (fallthru)
+
+;; Start of basic block ( 6) -> 7
+;; Pred edge  6 (fallthru)
+(note 48 47 49 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+(insn 49 48 50 7 node.h:47 (set (reg:SI 77 [ debug.76 ])
+        (mem/c/i:SI (symbol_ref:DI ("debug") [flags 0x2]  <var_decl 0x7f2f6c4b8b40 debug>) [0 debug+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 50 49 51 7 node.h:47 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 77 [ debug.76 ])
+            (const_int 0 [0x0]))) 2 {*cmpsi_ccno_1} (nil))
+
+(jump_insn 51 50 52 7 node.h:47 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref:DI 69)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 69)
+;; End of basic block 7 -> ( 8 9)
+
+;; Succ edge  8 (fallthru)
+;; Succ edge  9
+
+;; Start of basic block ( 7) -> 8
+;; Pred edge  7 (fallthru)
+(note 52 51 53 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+
+(insn 53 52 54 8 node.h:47 (set (reg/f:DI 78 [ W.77 ])
+        (mem/f/c/i:DI (symbol_ref:DI ("W")  <var_decl 0x7f2f6c4b8c80 W>) [0 W+0 S8 A64])) 89 {*movdi_1_rex64} (nil))
+
+(insn 54 53 55 8 node.h:49 (set (reg:SI 79 [ D.78 ])
+        (mem/c/i:SI (symbol_ref:DI ("D")  <var_decl 0x7f2f6c4b8e60 D>) [0 D+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 55 54 56 8 node.h:49 (set (reg:DI 80 [ D.49993 ])
+        (zero_extend:DI (reg:SI 79 [ D.78 ]))) 123 {zero_extendsidi2_rex64} (nil))
+
+(insn 56 55 57 8 node.h:49 (set (reg:SI 81 [ network_size.79 ])
+        (mem/c/i:SI (symbol_ref:DI ("network_size") [flags 0x2]  <var_decl 0x7f2f6c4b8aa0 network_size>) [0 network_size+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 57 56 58 8 node.h:49 (set (reg:DI 82 [ D.49995 ])
+        (zero_extend:DI (reg:SI 81 [ network_size.79 ]))) 123 {zero_extendsidi2_rex64} (nil))
+
+(insn 58 57 59 8 node.h:49 (parallel [
+            (set (reg:DI 83 [ D.49996 ])
+                (mult:DI (reg:DI 80 [ D.49993 ])
+                    (reg:DI 82 [ D.49995 ])))
+            (clobber (reg:CC 17 flags))
+        ]) 334 {*muldi3_1} (nil))
+
+(insn 59 58 60 8 node.h:47 (parallel [
+            (set (reg:DI 84 [ D.49997 ])
+                (ashift:DI (reg:DI 83 [ D.49996 ])
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) 489 {*ashldi3_1_rex64} (nil))
+
+(insn 60 59 61 8 node.h:47 (set (reg/f:DI 85 [ D.49998 ])
+        (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <string_cst 0x7f2f6b9f3000>)) 89 {*movdi_1_rex64} (nil))
+
+(insn 61 60 62 8 node.h:47 (set (reg:DI 2 cx)
+        (reg/f:DI 78 [ W.77 ])) 89 {*movdi_1_rex64} (nil))
+
+(insn 62 61 63 8 node.h:47 (set (reg:DI 1 dx)
+        (reg:DI 84 [ D.49997 ])) 89 {*movdi_1_rex64} (nil))
+
+(insn 63 62 64 8 node.h:47 (set (reg:DI 4 si)
+        (symbol_ref:DI ("clock") [flags 0x41]  <function_decl 0x7f2f6c52e900 clock>)) 89 {*movdi_1_rex64} (nil))
+
+(insn 64 63 65 8 node.h:47 (set (reg:DI 5 di)
+        (reg/f:DI 85 [ D.49998 ])) 89 {*movdi_1_rex64} (nil))
+
+(insn 65 64 66 8 node.h:47 (set (reg:QI 0 ax)
+        (const_int 0 [0x0])) 62 {*movqi_1} (nil))
+
+(call_insn 66 65 69 8 node.h:47 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f2f6d752000 printf>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:QI 0 ax))
+        (expr_list:REG_DEP_TRUE (use (reg:DI 5 di))
+            (expr_list:REG_DEP_TRUE (use (reg:DI 4 si))
+                (expr_list:REG_DEP_TRUE (use (reg:DI 1 dx))
+                    (expr_list:REG_DEP_TRUE (use (reg:DI 2 cx))
+                        (nil)))))))
+;; End of basic block 8 -> ( 9)
+
+;; Succ edge  9 (fallthru)
+
+;; Start of basic block ( 8 7) -> 9
+;; Pred edge  8 (fallthru)
+;; Pred edge  7
+(code_label 69 66 70 9 1 "" [1 uses])
+
+(note 70 69 0 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+;; End of basic block 9 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+
+
+;; Function W_term (W_term)
+
+(note 1 0 3 NOTE_INSN_DELETED)
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY (fallthru)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 5 2 6 2 node.h:54 (set (reg:SI 58 [ debug.66 ])
+        (mem/c/i:SI (symbol_ref:DI ("debug") [flags 0x2]  <var_decl 0x7f2f6c4b8b40 debug>) [0 debug+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 6 5 7 2 node.h:54 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 58 [ debug.66 ])
+            (const_int 0 [0x0]))) 2 {*cmpsi_ccno_1} (nil))
+
+(jump_insn 7 6 8 2 node.h:54 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 11)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 11)
+;; End of basic block 2 -> ( 3 4)
+
+;; Succ edge  3 (fallthru)
+;; Succ edge  4
+
+;; Start of basic block ( 2) -> 3
+;; Pred edge  2 (fallthru)
+(note 8 7 9 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 9 8 10 3 node.h:54 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <string_cst 0x7f2f6b9c8ea0>)) 89 {*movdi_1_rex64} (nil))
+
+(call_insn 10 9 11 3 node.h:54 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f2f6d752700 __builtin_puts>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:DI 5 di))
+        (nil)))
+;; End of basic block 3 -> ( 4)
+
+;; Succ edge  4 (fallthru)
+
+;; Start of basic block ( 2 3) -> 4
+;; Pred edge  2
+;; Pred edge  3 (fallthru)
+(code_label 11 10 12 4 7 "" [1 uses])
+
+(note 12 11 13 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 13 12 14 4 node.h:55 (set (reg/f:DI 59 [ W.67 ])
+        (mem/f/c/i:DI (symbol_ref:DI ("W")  <var_decl 0x7f2f6c4b8c80 W>) [0 W+0 S8 A64])) 89 {*movdi_1_rex64} (nil))
+
+(insn 14 13 15 4 node.h:55 (set (reg:DI 5 di)
+        (reg/f:DI 59 [ W.67 ])) 89 {*movdi_1_rex64} (nil))
+
+(call_insn 15 14 16 4 node.h:55 (call (mem:QI (symbol_ref:DI ("free") [flags 0x41]  <function_decl 0x7f2f6d767c00 free>) [0 S1 A8])
+        (const_int 0 [0x0])) 639 {*call_0} (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (expr_list:REG_DEP_TRUE (use (reg:DI 5 di))
+        (nil)))
+
+(insn 16 15 17 4 node.h:56 (set (reg:SI 60 [ debug.68 ])
+        (mem/c/i:SI (symbol_ref:DI ("debug") [flags 0x2]  <var_decl 0x7f2f6c4b8b40 debug>) [0 debug+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 17 16 18 4 node.h:56 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 60 [ debug.68 ])
+            (const_int 0 [0x0]))) 2 {*cmpsi_ccno_1} (nil))
+
+(jump_insn 18 17 19 4 node.h:56 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref:DI 24)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 24)
+;; End of basic block 4 -> ( 5 6)
+
+;; Succ edge  5 (fallthru)
+;; Succ edge  6
+
+;; Start of basic block ( 4) -> 5
+;; Pred edge  4 (fallthru)
+(note 19 18 20 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 20 19 21 5 node.h:56 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC4") [flags 0x2]  <string_cst 0x7f2f6b9c8ed0>)) 89 {*movdi_1_rex64} (nil))
+
+(call_insn 21 20 24 5 node.h:56 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f2f6d752700 __builtin_puts>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:DI 5 di))
+        (nil)))
+;; End of basic block 5 -> ( 6)
+
+;; Succ edge  6 (fallthru)
+
+;; Start of basic block ( 5 4) -> 6
+;; Pred edge  5 (fallthru)
+;; Pred edge  4
+(code_label 24 21 25 6 6 "" [1 uses])
+
+(note 25 24 0 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+;; End of basic block 6 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+
+
+;; Function get_input (get_input)
+
+(note 1 0 5 NOTE_INSN_DELETED)
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY (fallthru)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(insn 2 5 3 2 node.h:60 (set (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                (const_int -20 [0xffffffffffffffec])) [0 t+0 S4 A32])
+        (reg:SI 5 di [ t ])) 47 {*movsi_1} (nil))
+
+(insn 3 2 4 2 node.h:60 (set (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                (const_int -24 [0xffffffffffffffe8])) [0 input+0 S4 A32])
+        (reg:SI 4 si [ input ])) 47 {*movsi_1} (nil))
+
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 7 4 8 2 node.h:61 (set (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                (const_int -4 [0xfffffffffffffffc])) [0 success+0 S4 A32])
+        (const_int 1 [0x1])) 47 {*movsi_1} (nil))
+
+(insn 8 7 9 2 node.h:62 (set (reg:DI 65)
+        (zero_extend:DI (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                    (const_int -24 [0xffffffffffffffe8])) [0 input+0 S4 A32]))) 123 {zero_extendsidi2_rex64} (nil))
+
+(insn 9 8 10 2 node.h:62 (set (reg:CCGOC 17 flags)
+        (compare:CCGOC (reg:DI 65)
+            (const_int 0 [0x0]))) 3 {*cmpdi_ccno_1} (nil))
+
+(jump_insn 10 9 72 2 node.h:62 (set (pc)
+        (if_then_else (lt (reg:CCGOC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 14)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 14)
+;; End of basic block 2 -> ( 4 3)
+
+;; Succ edge  4
+;; Succ edge  3 (fallthru)
+
+;; Start of basic block ( 2) -> 3
+;; Pred edge  2 (fallthru)
+(note 72 10 11 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 11 72 79 3 node.h:62 (set (reg:DF 59 [ D.49949 ])
+        (float:DF (reg:DI 65))) 220 {*floatdidf2_sse_interunit} (nil))
+
+(jump_insn 79 11 80 3 (set (pc)
+        (label_ref 20)) -1 (nil)
+ -> 20)
+;; End of basic block 3 -> ( 5)
+
+;; Succ edge  5 [100.0%] 
+
+(barrier 80 79 14)
+
+;; Start of basic block ( 2) -> 4
+;; Pred edge  2
+(code_label 14 80 73 4 10 "" [1 uses])
+
+(note 73 14 15 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 15 73 16 4 node.h:62 (parallel [
+            (set (reg:DI 67)
+                (lshiftrt:DI (reg:DI 65)
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 545 {*lshrdi3_1_one_bit_rex64} (nil))
+
+(insn 16 15 17 4 node.h:62 (parallel [
+            (set (reg:DI 68)
+                (and:DI (reg:DI 65)
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 375 {*anddi_1} (nil))
+
+(insn 17 16 18 4 node.h:62 (parallel [
+            (set (reg:DI 67)
+                (ior:DI (reg:DI 67)
+                    (reg:DI 68)))
+            (clobber (reg:CC 17 flags))
+        ]) 397 {*iordi_1} (nil))
+
+(insn 18 17 19 4 node.h:62 (set (reg:DF 66)
+        (float:DF (reg:DI 67))) 220 {*floatdidf2_sse_interunit} (nil))
+
+(insn 19 18 20 4 node.h:62 (set (reg:DF 59 [ D.49949 ])
+        (plus:DF (reg:DF 66)
+            (reg:DF 66))) 713 {*fop_df_comm_sse} (nil))
+;; End of basic block 4 -> ( 5)
+
+;; Succ edge  5 (fallthru)
+
+;; Start of basic block ( 4 3) -> 5
+;; Pred edge  4 (fallthru)
+;; Pred edge  3 [100.0%] 
+(code_label 20 19 74 5 11 "" [1 uses])
+
+(note 74 20 21 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 21 74 22 5 node.h:62 (set (reg:DI 69)
+        (zero_extend:DI (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                    (const_int -20 [0xffffffffffffffec])) [0 t+0 S4 A32]))) 123 {zero_extendsidi2_rex64} (nil))
+
+(insn 22 21 23 5 node.h:62 (set (reg:CCGOC 17 flags)
+        (compare:CCGOC (reg:DI 69)
+            (const_int 0 [0x0]))) 3 {*cmpdi_ccno_1} (nil))
+
+(jump_insn 23 22 75 5 node.h:62 (set (pc)
+        (if_then_else (lt (reg:CCGOC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 27)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 27)
+;; End of basic block 5 -> ( 7 6)
+
+;; Succ edge  7
+;; Succ edge  6 (fallthru)
+
+;; Start of basic block ( 5) -> 6
+;; Pred edge  5 (fallthru)
+(note 75 23 24 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+(insn 24 75 81 6 node.h:62 (set (reg:DF 60 [ D.49950 ])
+        (float:DF (reg:DI 69))) 220 {*floatdidf2_sse_interunit} (nil))
+
+(jump_insn 81 24 82 6 (set (pc)
+        (label_ref 33)) -1 (nil)
+ -> 33)
+;; End of basic block 6 -> ( 8)
+
+;; Succ edge  8 [100.0%] 
+
+(barrier 82 81 27)
+
+;; Start of basic block ( 5) -> 7
+;; Pred edge  5
+(code_label 27 82 76 7 12 "" [1 uses])
+
+(note 76 27 28 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+(insn 28 76 29 7 node.h:62 (parallel [
+            (set (reg:DI 71)
+                (lshiftrt:DI (reg:DI 69)
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 545 {*lshrdi3_1_one_bit_rex64} (nil))
+
+(insn 29 28 30 7 node.h:62 (parallel [
+            (set (reg:DI 72)
+                (and:DI (reg:DI 69)
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 375 {*anddi_1} (nil))
+
+(insn 30 29 31 7 node.h:62 (parallel [
+            (set (reg:DI 71)
+                (ior:DI (reg:DI 71)
+                    (reg:DI 72)))
+            (clobber (reg:CC 17 flags))
+        ]) 397 {*iordi_1} (nil))
+
+(insn 31 30 32 7 node.h:62 (set (reg:DF 70)
+        (float:DF (reg:DI 71))) 220 {*floatdidf2_sse_interunit} (nil))
+
+(insn 32 31 33 7 node.h:62 (set (reg:DF 60 [ D.49950 ])
+        (plus:DF (reg:DF 70)
+            (reg:DF 70))) 713 {*fop_df_comm_sse} (nil))
+;; End of basic block 7 -> ( 8)
+
+;; Succ edge  8 (fallthru)
+
+;; Start of basic block ( 7 6) -> 8
+;; Pred edge  7 (fallthru)
+;; Pred edge  6 [100.0%] 
+(code_label 33 32 77 8 13 "" [1 uses])
+
+(note 77 33 34 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+
+(insn 34 77 35 8 node.h:62 (set (reg:DF 73)
+        (mem/u/c/i:DF (symbol_ref/u:DI ("*.LC5") [flags 0x2]) [0 S8 A64])) 104 {*movdf_integer_rex64} (expr_list:REG_EQUAL (const_double:DF 1.0e+0 [0x0.8p+1])
+        (nil)))
+
+(insn 35 34 36 8 node.h:62 (set (reg:DF 61 [ D.49951 ])
+        (plus:DF (reg:DF 60 [ D.49950 ])
+            (reg:DF 73))) 713 {*fop_df_comm_sse} (nil))
+
+(insn 36 35 37 8 node.h:62 (set (reg:DF 74)
+        (div:DF (reg:DF 59 [ D.49949 ])
+            (reg:DF 61 [ D.49951 ]))) 724 {*fop_df_1_sse} (nil))
+
+(insn 37 36 38 8 node.h:62 (set (mem/c/i:DF (plus:DI (reg/f:DI 20 frame)
+                (const_int -16 [0xfffffffffffffff0])) [0 retrieved_input+0 S8 A64])
+        (reg:DF 74)) 104 {*movdf_integer_rex64} (nil))
+
+(insn 38 37 39 8 node.h:63 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                    (const_int -4 [0xfffffffffffffffc])) [0 success+0 S4 A32])
+            (const_int 0 [0x0]))) 2 {*cmpsi_ccno_1} (nil))
+
+(jump_insn 39 38 40 8 node.h:63 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 58)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 58)
+;; End of basic block 8 -> ( 9 12)
+
+;; Succ edge  9 (fallthru)
+;; Succ edge  12
+
+;; Start of basic block ( 8) -> 9
+;; Pred edge  8 (fallthru)
+(note 40 39 41 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+
+(insn 41 40 42 9 node.h:65 (set (reg:SI 62 [ debug.65 ])
+        (mem/c/i:SI (symbol_ref:DI ("debug") [flags 0x2]  <var_decl 0x7f2f6c4b8b40 debug>) [0 debug+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 42 41 43 9 node.h:65 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 62 [ debug.65 ])
+            (const_int 0 [0x0]))) 2 {*cmpsi_ccno_1} (nil))
+
+(jump_insn 43 42 44 9 node.h:65 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 53)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 53)
+;; End of basic block 9 -> ( 10 11)
+
+;; Succ edge  10 (fallthru)
+;; Succ edge  11
+
+;; Start of basic block ( 9) -> 10
+;; Pred edge  9 (fallthru)
+(note 44 43 45 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+
+(insn 45 44 46 10 node.h:65 (set (reg/f:DI 63 [ D.49957 ])
+        (symbol_ref/f:DI ("*.LC6") [flags 0x2]  <string_cst 0x7f2f6b9dc7d0>)) 89 {*movdi_1_rex64} (nil))
+
+(insn 46 45 47 10 node.h:65 (set (reg:SI 75)
+        (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                (const_int -24 [0xffffffffffffffe8])) [0 input+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 47 46 48 10 node.h:65 (set (reg:SI 76)
+        (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                (const_int -20 [0xffffffffffffffec])) [0 t+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 48 47 49 10 node.h:65 (set (reg:SI 1 dx)
+        (reg:SI 75)) 47 {*movsi_1} (nil))
+
+(insn 49 48 50 10 node.h:65 (set (reg:SI 4 si)
+        (reg:SI 76)) 47 {*movsi_1} (nil))
+
+(insn 50 49 51 10 node.h:65 (set (reg:DI 5 di)
+        (reg/f:DI 63 [ D.49957 ])) 89 {*movdi_1_rex64} (nil))
+
+(insn 51 50 52 10 node.h:65 (set (reg:QI 0 ax)
+        (const_int 0 [0x0])) 62 {*movqi_1} (nil))
+
+(call_insn 52 51 53 10 node.h:65 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f2f6d752000 printf>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:QI 0 ax))
+        (expr_list:REG_DEP_TRUE (use (reg:DI 5 di))
+            (expr_list:REG_DEP_TRUE (use (reg:SI 4 si))
+                (expr_list:REG_DEP_TRUE (use (reg:SI 1 dx))
+                    (nil))))))
+;; End of basic block 10 -> ( 11)
+
+;; Succ edge  11 (fallthru)
+
+;; Start of basic block ( 9 10) -> 11
+;; Pred edge  9
+;; Pred edge  10 (fallthru)
+(code_label 53 52 54 11 15 "" [1 uses])
+
+(note 54 53 55 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+
+(insn 55 54 83 11 node.h:68 (set (reg:DF 58 [ D.49958 ])
+        (mem/u/c/i:DF (symbol_ref/u:DI ("*.LC7") [flags 0x2]) [0 S8 A64])) 104 {*movdf_integer_rex64} (expr_list:REG_EQUAL (const_double:DF 0.0 [0x0.0p+0])
+        (nil)))
+
+(jump_insn 83 55 84 11 node.h:68 (set (pc)
+        (label_ref 61)) -1 (nil)
+ -> 61)
+;; End of basic block 11 -> ( 13)
+
+;; Succ edge  13 [100.0%] 
+
+(barrier 84 83 58)
+
+;; Start of basic block ( 8) -> 12
+;; Pred edge  8
+(code_label 58 84 59 12 14 "" [1 uses])
+
+(note 59 58 60 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+
+(insn 60 59 61 12 node.h:70 (set (reg:DF 58 [ D.49958 ])
+        (mem/c/i:DF (plus:DI (reg/f:DI 20 frame)
+                (const_int -16 [0xfffffffffffffff0])) [0 retrieved_input+0 S8 A64])) 104 {*movdf_integer_rex64} (nil))
+;; End of basic block 12 -> ( 13)
+
+;; Succ edge  13 (fallthru)
+
+;; Start of basic block ( 12 11) -> 13
+;; Pred edge  12 (fallthru)
+;; Pred edge  11 [100.0%] 
+(code_label 61 60 62 13 16 "" [1 uses])
+
+(note 62 61 63 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+
+(insn 63 62 67 13 node.h:70 (set (reg:DF 64 [ <retval> ])
+        (reg:DF 58 [ D.49958 ])) 104 {*movdf_integer_rex64} (nil))
+
+(insn 67 63 70 13 node.h:71 (set (reg/i:DF 21 xmm0)
+        (reg:DF 64 [ <retval> ])) 104 {*movdf_integer_rex64} (nil))
+
+(insn 70 67 0 13 node.h:71 (use (reg/i:DF 21 xmm0)) -1 (nil))
+;; End of basic block 13 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+
+
+;; Function update_input (update_input)
+
+(note 1 0 3 NOTE_INSN_DELETED)
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY (fallthru)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 5 2 51 2 node.h:76 (set (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])
+        (const_int 0 [0x0])) 47 {*movsi_1} (nil))
+
+(jump_insn 51 5 52 2 node.h:76 (set (pc)
+        (label_ref 41)) -1 (nil)
+ -> 41)
+;; End of basic block 2 -> ( 7)
+
+;; Succ edge  7 [100.0%] 
+
+(barrier 52 51 45)
+
+;; Start of basic block ( 7) -> 3
+;; Pred edge  7
+(code_label 45 52 8 3 21 "" [1 uses])
+
+(note 8 45 9 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 9 8 53 3 node.h:78 (set (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                (const_int -8 [0xfffffffffffffff8])) [0 j+0 S4 A32])
+        (const_int 0 [0x0])) 47 {*movsi_1} (nil))
+
+(jump_insn 53 9 54 3 node.h:78 (set (pc)
+        (label_ref 32)) -1 (nil)
+ -> 32)
+;; End of basic block 3 -> ( 5)
+
+;; Succ edge  5 [100.0%] 
+
+(barrier 54 53 36)
+
+;; Start of basic block ( 5) -> 4
+;; Pred edge  5
+(code_label 36 54 12 4 20 "" [1 uses])
+
+(note 12 36 13 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 13 12 14 4 node.h:80 (set (reg/f:DI 62 [ network.59 ])
+        (mem/f/c/i:DI (symbol_ref:DI ("network")  <var_decl 0x7f2f6c4b8be0 network>) [0 network+0 S8 A64])) 89 {*movdi_1_rex64} (nil))
+
+(insn 14 13 15 4 node.h:80 (set (reg:DI 63 [ D.49934 ])
+        (zero_extend:DI (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                    (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32]))) 123 {zero_extendsidi2_rex64} (nil))
+
+(insn 15 14 16 4 node.h:80 (parallel [
+            (set (reg:DI 64 [ D.49935 ])
+                (ashift:DI (reg:DI 63 [ D.49934 ])
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) 489 {*ashldi3_1_rex64} (nil))
+
+(insn 16 15 17 4 node.h:80 (parallel [
+            (set (reg/f:DI 65 [ D.49936 ])
+                (plus:DI (reg/f:DI 62 [ network.59 ])
+                    (reg:DI 64 [ D.49935 ])))
+            (clobber (reg:CC 17 flags))
+        ]) 253 {*adddi_1} (nil))
+
+(insn 17 16 18 4 node.h:80 (set (reg/f:DI 66 [ D.49937 ])
+        (mem/f:DI (reg/f:DI 65 [ D.49936 ]) [0 S8 A64])) 89 {*movdi_1_rex64} (nil))
+
+(insn 18 17 19 4 node.h:80 (set (reg:SI 67 [ network_size.60 ])
+        (mem/c/i:SI (symbol_ref:DI ("network_size") [flags 0x2]  <var_decl 0x7f2f6c4b8aa0 network_size>) [0 network_size+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 19 18 20 4 node.h:80 (parallel [
+            (set (reg:SI 68 [ D.49939 ])
+                (plus:SI (reg:SI 67 [ network_size.60 ])
+                    (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                            (const_int -8 [0xfffffffffffffff8])) [0 j+0 S4 A32])))
+            (clobber (reg:CC 17 flags))
+        ]) 252 {*addsi_1} (nil))
+
+(insn 20 19 21 4 node.h:80 (parallel [
+            (set (reg:SI 69 [ D.49940 ])
+                (plus:SI (reg:SI 68 [ D.49939 ])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 252 {*addsi_1} (nil))
+
+(insn 21 20 22 4 node.h:80 (set (reg:DI 70 [ D.49941 ])
+        (zero_extend:DI (reg:SI 69 [ D.49940 ]))) 123 {zero_extendsidi2_rex64} (nil))
+
+(insn 22 21 23 4 node.h:80 (parallel [
+            (set (reg:DI 71 [ D.49942 ])
+                (ashift:DI (reg:DI 70 [ D.49941 ])
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) 489 {*ashldi3_1_rex64} (nil))
+
+(insn 23 22 24 4 node.h:80 (parallel [
+            (set (reg/f:DI 72 [ D.49943 ])
+                (plus:DI (reg/f:DI 66 [ D.49937 ])
+                    (reg:DI 71 [ D.49942 ])))
+            (clobber (reg:CC 17 flags))
+        ]) 253 {*adddi_1} (nil))
+
+(insn 24 23 25 4 node.h:80 (set (reg:SI 74)
+        (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                (const_int -8 [0xfffffffffffffff8])) [0 j+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 25 24 26 4 node.h:80 (set (reg:SI 75)
+        (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 26 25 27 4 node.h:80 (set (reg:SI 4 si)
+        (reg:SI 74)) 47 {*movsi_1} (nil))
+
+(insn 27 26 28 4 node.h:80 (set (reg:SI 5 di)
+        (reg:SI 75)) 47 {*movsi_1} (nil))
+
+(call_insn 28 27 29 4 node.h:80 (set (reg:DF 21 xmm0)
+        (call (mem:QI (symbol_ref:DI ("get_input") [flags 0x3]  <function_decl 0x7f2f6c26e800 get_input>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:SI 5 di))
+        (expr_list:REG_DEP_TRUE (use (reg:SI 4 si))
+            (nil))))
+
+(insn 29 28 30 4 node.h:80 (set (reg:DF 73 [ D.49944 ])
+        (reg:DF 21 xmm0)) 104 {*movdf_integer_rex64} (nil))
+
+(insn 30 29 31 4 node.h:80 (set (mem:DF (reg/f:DI 72 [ D.49943 ]) [0 S8 A64])
+        (reg:DF 73 [ D.49944 ])) 104 {*movdf_integer_rex64} (nil))
+
+(insn 31 30 32 4 node.h:78 (parallel [
+            (set (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                        (const_int -8 [0xfffffffffffffff8])) [0 j+0 S4 A32])
+                (plus:SI (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                            (const_int -8 [0xfffffffffffffff8])) [0 j+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 252 {*addsi_1} (nil))
+;; End of basic block 4 -> ( 5)
+
+;; Succ edge  5 (fallthru)
+
+;; Start of basic block ( 4 3) -> 5
+;; Pred edge  4 (fallthru)
+;; Pred edge  3 [100.0%] 
+(code_label 32 31 33 5 19 "" [1 uses])
+
+(note 33 32 34 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 34 33 35 5 node.h:78 (set (reg:SI 60 [ input_list_size.61 ])
+        (mem/c/i:SI (symbol_ref:DI ("input_list_size")  <var_decl 0x7f2f6c4b8d20 input_list_size>) [0 input_list_size+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 35 34 37 5 node.h:78 (set (reg:SI 61 [ input_list_size.62 ])
+        (reg:SI 60 [ input_list_size.61 ])) 47 {*movsi_1} (nil))
+
+(insn 37 35 38 5 node.h:78 (set (reg:CC 17 flags)
+        (compare:CC (reg:SI 61 [ input_list_size.62 ])
+            (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                    (const_int -8 [0xfffffffffffffff8])) [0 j+0 S4 A32]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 38 37 39 5 node.h:78 (set (pc)
+        (if_then_else (gtu (reg:CC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 36)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 36)
+;; End of basic block 5 -> ( 4 6)
+
+;; Succ edge  4
+;; Succ edge  6 (fallthru)
+
+;; Start of basic block ( 5) -> 6
+;; Pred edge  5 (fallthru)
+(note 39 38 40 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+(insn 40 39 41 6 node.h:76 (parallel [
+            (set (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                        (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])
+                (plus:SI (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                            (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 252 {*addsi_1} (nil))
+;; End of basic block 6 -> ( 7)
+
+;; Succ edge  7 (fallthru)
+
+;; Start of basic block ( 6 2) -> 7
+;; Pred edge  6 (fallthru)
+;; Pred edge  2 [100.0%] 
+(code_label 41 40 42 7 18 "" [1 uses])
+
+(note 42 41 43 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+(insn 43 42 44 7 node.h:76 (set (reg:SI 58 [ historylength.63 ])
+        (mem/c/i:SI (symbol_ref:DI ("historylength") [flags 0x2]  <var_decl 0x7f2f6c4b8a00 historylength>) [0 historylength+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 44 43 46 7 node.h:76 (set (reg:SI 59 [ historylength.64 ])
+        (reg:SI 58 [ historylength.63 ])) 47 {*movsi_1} (nil))
+
+(insn 46 44 47 7 node.h:76 (set (reg:CC 17 flags)
+        (compare:CC (reg:SI 59 [ historylength.64 ])
+            (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                    (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 47 46 50 7 node.h:76 (set (pc)
+        (if_then_else (gtu (reg:CC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 45)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 45)
+;; End of basic block 7 -> ( 3 8)
+
+;; Succ edge  3
+;; Succ edge  8 (fallthru)
+
+;; Start of basic block ( 7) -> 8
+;; Pred edge  7 (fallthru)
+(note 50 47 0 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+;; End of basic block 8 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+
+
+;; Function network_init (network_init)
+
+(note 1 0 3 NOTE_INSN_DELETED)
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY (fallthru)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 5 2 6 2 node.h:91 (set (reg:SI 58 [ network_size.26 ])
+        (mem/c/i:SI (symbol_ref:DI ("network_size") [flags 0x2]  <var_decl 0x7f2f6c4b8aa0 network_size>) [0 network_size+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 6 5 7 2 node.h:91 (set (reg:CC 17 flags)
+        (compare:CC (reg:SI 58 [ network_size.26 ])
+            (const_int 1 [0x1]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 7 6 11 2 node.h:91 (set (pc)
+        (if_then_else (leu (reg:CC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref:DI 187)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 187)
+;; End of basic block 2 -> ( 24 3)
+
+;; Succ edge  24
+;; Succ edge  3 (fallthru)
+
+;; Start of basic block ( 2) -> 3
+;; Pred edge  2 (fallthru)
+(code_label 11 7 12 3 23 "" [0 uses])
+
+(note 12 11 13 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 13 12 14 3 node.h:92 (set (reg:SI 59 [ input_list_size.27 ])
+        (mem/c/i:SI (symbol_ref:DI ("input_list_size")  <var_decl 0x7f2f6c4b8d20 input_list_size>) [0 input_list_size+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 14 13 15 3 node.h:92 (set (reg:SI 60 [ input_list_size.28 ])
+        (reg:SI 59 [ input_list_size.27 ])) 47 {*movsi_1} (nil))
+
+(insn 15 14 16 3 node.h:92 (set (reg:SI 61 [ network_size.29 ])
+        (mem/c/i:SI (symbol_ref:DI ("network_size") [flags 0x2]  <var_decl 0x7f2f6c4b8aa0 network_size>) [0 network_size+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 16 15 17 3 node.h:92 (set (reg:CC 17 flags)
+        (compare:CC (reg:SI 60 [ input_list_size.28 ])
+            (reg:SI 61 [ network_size.29 ]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 17 16 21 3 node.h:92 (set (pc)
+        (if_then_else (gtu (reg:CC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref:DI 192)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 192)
+;; End of basic block 3 -> ( 25 4)
+
+;; Succ edge  25
+;; Succ edge  4 (fallthru)
+
+;; Start of basic block ( 3) -> 4
+;; Pred edge  3 (fallthru)
+(code_label 21 17 22 4 25 "" [0 uses])
+
+(note 22 21 23 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 23 22 24 4 node.h:93 (set (reg:SI 62 [ output_list_size.30 ])
+        (mem/c/i:SI (symbol_ref:DI ("output_list_size")  <var_decl 0x7f2f6c4b8dc0 output_list_size>) [0 output_list_size+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 24 23 25 4 node.h:93 (set (reg:SI 63 [ output_list_size.31 ])
+        (reg:SI 62 [ output_list_size.30 ])) 47 {*movsi_1} (nil))
+
+(insn 25 24 26 4 node.h:93 (set (reg:SI 64 [ network_size.32 ])
+        (mem/c/i:SI (symbol_ref:DI ("network_size") [flags 0x2]  <var_decl 0x7f2f6c4b8aa0 network_size>) [0 network_size+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 26 25 27 4 node.h:93 (set (reg:CC 17 flags)
+        (compare:CC (reg:SI 63 [ output_list_size.31 ])
+            (reg:SI 64 [ network_size.32 ]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 27 26 31 4 node.h:93 (set (pc)
+        (if_then_else (gtu (reg:CC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref:DI 197)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 197)
+;; End of basic block 4 -> ( 26 5)
+
+;; Succ edge  26
+;; Succ edge  5 (fallthru)
+
+;; Start of basic block ( 4) -> 5
+;; Pred edge  4 (fallthru)
+(code_label 31 27 32 5 26 "" [0 uses])
+
+(note 32 31 33 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 33 32 34 5 node.h:94 (set (reg:SI 65 [ historylength.33 ])
+        (mem/c/i:SI (symbol_ref:DI ("historylength") [flags 0x2]  <var_decl 0x7f2f6c4b8a00 historylength>) [0 historylength+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 34 33 35 5 node.h:94 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 65 [ historylength.33 ])
+            (const_int 0 [0x0]))) 2 {*cmpsi_ccno_1} (nil))
+
+(jump_insn 35 34 39 5 node.h:94 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref:DI 202)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 202)
+;; End of basic block 5 -> ( 27 6)
+
+;; Succ edge  27
+;; Succ edge  6 (fallthru)
+
+;; Start of basic block ( 5) -> 6
+;; Pred edge  5 (fallthru)
+(code_label 39 35 40 6 27 "" [0 uses])
+
+(note 40 39 41 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+(insn 41 40 42 6 node.h:98 (set (reg:SI 66 [ network_size.34 ])
+        (mem/c/i:SI (symbol_ref:DI ("network_size") [flags 0x2]  <var_decl 0x7f2f6c4b8aa0 network_size>) [0 network_size+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 42 41 43 6 node.h:98 (parallel [
+            (set (reg:SI 67 [ D.49868 ])
+                (ashift:SI (reg:SI 66 [ network_size.34 ])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 494 {*ashlsi3_1} (nil))
+
+(insn 43 42 44 6 node.h:98 (parallel [
+            (set (reg:SI 68 [ D.35 ])
+                (plus:SI (reg:SI 67 [ D.49868 ])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 252 {*addsi_1} (nil))
+
+(insn 44 43 45 6 node.h:98 (set (mem/c/i:SI (symbol_ref:DI ("D")  <var_decl 0x7f2f6c4b8e60 D>) [0 D+0 S4 A32])
+        (reg:SI 68 [ D.35 ])) 47 {*movsi_1} (nil))
+
+(insn 45 44 46 6 node.h:99 (set (reg:SI 69 [ debug.36 ])
+        (mem/c/i:SI (symbol_ref:DI ("debug") [flags 0x2]  <var_decl 0x7f2f6c4b8b40 debug>) [0 debug+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 46 45 47 6 node.h:99 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 69 [ debug.36 ])
+            (const_int 0 [0x0]))) 2 {*cmpsi_ccno_1} (nil))
+
+(jump_insn 47 46 48 6 node.h:99 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 57)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 57)
+;; End of basic block 6 -> ( 7 8)
+
+;; Succ edge  7 (fallthru)
+;; Succ edge  8
+
+;; Start of basic block ( 6) -> 7
+;; Pred edge  6 (fallthru)
+(note 48 47 49 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+(insn 49 48 50 7 node.h:99 (set (reg:SI 70 [ network_size.37 ])
+        (mem/c/i:SI (symbol_ref:DI ("network_size") [flags 0x2]  <var_decl 0x7f2f6c4b8aa0 network_size>) [0 network_size+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 50 49 51 7 node.h:99 (set (reg:SI 71 [ historylength.38 ])
+        (mem/c/i:SI (symbol_ref:DI ("historylength") [flags 0x2]  <var_decl 0x7f2f6c4b8a00 historylength>) [0 historylength+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 51 50 52 7 node.h:99 (set (reg/f:DI 72 [ D.49875 ])
+        (symbol_ref/f:DI ("*.LC8") [flags 0x2]  <string_cst 0x7f2f6b9e59a0>)) 89 {*movdi_1_rex64} (nil))
+
+(insn 52 51 53 7 node.h:99 (set (reg:SI 1 dx)
+        (reg:SI 70 [ network_size.37 ])) 47 {*movsi_1} (nil))
+
+(insn 53 52 54 7 node.h:99 (set (reg:SI 4 si)
+        (reg:SI 71 [ historylength.38 ])) 47 {*movsi_1} (nil))
+
+(insn 54 53 55 7 node.h:99 (set (reg:DI 5 di)
+        (reg/f:DI 72 [ D.49875 ])) 89 {*movdi_1_rex64} (nil))
+
+(insn 55 54 56 7 node.h:99 (set (reg:QI 0 ax)
+        (const_int 0 [0x0])) 62 {*movqi_1} (nil))
+
+(call_insn 56 55 57 7 node.h:99 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f2f6d752000 printf>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:QI 0 ax))
+        (expr_list:REG_DEP_TRUE (use (reg:DI 5 di))
+            (expr_list:REG_DEP_TRUE (use (reg:SI 4 si))
+                (expr_list:REG_DEP_TRUE (use (reg:SI 1 dx))
+                    (nil))))))
+;; End of basic block 7 -> ( 8)
+
+;; Succ edge  8 (fallthru)
+
+;; Start of basic block ( 6 7) -> 8
+;; Pred edge  6
+;; Pred edge  7 (fallthru)
+(code_label 57 56 58 8 28 "" [1 uses])
+
+(note 58 57 59 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+
+(insn 59 58 60 8 node.h:104 (set (reg:SI 73 [ historylength.39 ])
+        (mem/c/i:SI (symbol_ref:DI ("historylength") [flags 0x2]  <var_decl 0x7f2f6c4b8a00 historylength>) [0 historylength+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 60 59 61 8 node.h:104 (set (reg:DI 74 [ D.49877 ])
+        (sign_extend:DI (reg:SI 73 [ historylength.39 ]))) 127 {extendsidi2_rex64} (nil))
+
+(insn 61 60 62 8 node.h:104 (parallel [
+            (set (reg:DI 75 [ D.49878 ])
+                (ashift:DI (reg:DI 74 [ D.49877 ])
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) 489 {*ashldi3_1_rex64} (nil))
+
+(insn 62 61 63 8 node.h:104 (set (reg:DI 5 di)
+        (reg:DI 75 [ D.49878 ])) 89 {*movdi_1_rex64} (nil))
+
+(call_insn 63 62 64 8 node.h:104 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("malloc") [flags 0x41]  <function_decl 0x7f2f6d770700 malloc>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (expr_list:REG_DEP_TRUE (use (reg:DI 5 di))
+        (nil)))
+
+(insn 64 63 65 8 node.h:104 (set (reg/f:DI 121)
+        (reg:DI 0 ax)) 89 {*movdi_1_rex64} (expr_list:REG_NOALIAS (reg/f:DI 121)
+        (nil)))
+
+(insn 65 64 66 8 node.h:104 (set (reg/f:DI 76 [ D.49879 ])
+        (reg/f:DI 121)) 89 {*movdi_1_rex64} (nil))
+
+(insn 66 65 67 8 node.h:104 (set (reg/f:DI 77 [ network.40 ])
+        (reg/f:DI 76 [ D.49879 ])) 89 {*movdi_1_rex64} (nil))
+
+(insn 67 66 68 8 node.h:104 (set (mem/f/c/i:DI (symbol_ref:DI ("network")  <var_decl 0x7f2f6c4b8be0 network>) [0 network+0 S8 A64])
+        (reg/f:DI 77 [ network.40 ])) 89 {*movdi_1_rex64} (nil))
+
+(insn 68 67 180 8 node.h:105 (set (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])
+        (const_int 0 [0x0])) 47 {*movsi_1} (nil))
+
+(jump_insn 180 68 181 8 node.h:105 (set (pc)
+        (label_ref 108)) -1 (nil)
+ -> 108)
+;; End of basic block 8 -> ( 13)
+
+;; Succ edge  13 [100.0%] 
+
+(barrier 181 180 112)
+
+;; Start of basic block ( 13) -> 9
+;; Pred edge  13
+(code_label 112 181 71 9 32 "" [1 uses])
+
+(note 71 112 72 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+
+(insn 72 71 73 9 node.h:108 (set (reg/f:DI 80 [ network.41 ])
+        (mem/f/c/i:DI (symbol_ref:DI ("network")  <var_decl 0x7f2f6c4b8be0 network>) [0 network+0 S8 A64])) 89 {*movdi_1_rex64} (nil))
+
+(insn 73 72 74 9 node.h:108 (set (reg:DI 81 [ D.49882 ])
+        (zero_extend:DI (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                    (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32]))) 123 {zero_extendsidi2_rex64} (nil))
+
+(insn 74 73 75 9 node.h:108 (parallel [
+            (set (reg:DI 82 [ D.49883 ])
+                (ashift:DI (reg:DI 81 [ D.49882 ])
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) 489 {*ashldi3_1_rex64} (nil))
+
+(insn 75 74 76 9 node.h:108 (parallel [
+            (set (reg/f:DI 83 [ D.49884 ])
+                (plus:DI (reg/f:DI 80 [ network.41 ])
+                    (reg:DI 82 [ D.49883 ])))
+            (clobber (reg:CC 17 flags))
+        ]) 253 {*adddi_1} (nil))
+
+(insn 76 75 77 9 node.h:108 (set (reg:SI 84 [ D.42 ])
+        (mem/c/i:SI (symbol_ref:DI ("D")  <var_decl 0x7f2f6c4b8e60 D>) [0 D+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 77 76 78 9 node.h:108 (set (reg:DI 85 [ D.49886 ])
+        (zero_extend:DI (reg:SI 84 [ D.42 ]))) 123 {zero_extendsidi2_rex64} (nil))
+
+(insn 78 77 79 9 node.h:108 (parallel [
+            (set (reg:DI 86 [ D.49887 ])
+                (ashift:DI (reg:DI 85 [ D.49886 ])
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) 489 {*ashldi3_1_rex64} (nil))
+
+(insn 79 78 80 9 node.h:108 (set (reg:DI 5 di)
+        (reg:DI 86 [ D.49887 ])) 89 {*movdi_1_rex64} (nil))
+
+(call_insn 80 79 81 9 node.h:108 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("malloc") [flags 0x41]  <function_decl 0x7f2f6d770700 malloc>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (expr_list:REG_DEP_TRUE (use (reg:DI 5 di))
+        (nil)))
+
+(insn 81 80 82 9 node.h:108 (set (reg/f:DI 122)
+        (reg:DI 0 ax)) 89 {*movdi_1_rex64} (expr_list:REG_NOALIAS (reg/f:DI 122)
+        (nil)))
+
+(insn 82 81 83 9 node.h:108 (set (reg/f:DI 87 [ D.49888 ])
+        (reg/f:DI 122)) 89 {*movdi_1_rex64} (nil))
+
+(insn 83 82 84 9 node.h:108 (set (reg/f:DI 88 [ D.49889 ])
+        (reg/f:DI 87 [ D.49888 ])) 89 {*movdi_1_rex64} (nil))
+
+(insn 84 83 85 9 node.h:108 (set (mem/f:DI (reg/f:DI 83 [ D.49884 ]) [0 S8 A64])
+        (reg/f:DI 88 [ D.49889 ])) 89 {*movdi_1_rex64} (nil))
+
+(insn 85 84 182 9 node.h:109 (set (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                (const_int -8 [0xfffffffffffffff8])) [0 j+0 S4 A32])
+        (const_int 0 [0x0])) 47 {*movsi_1} (nil))
+
+(jump_insn 182 85 183 9 node.h:109 (set (pc)
+        (label_ref 100)) -1 (nil)
+ -> 100)
+;; End of basic block 9 -> ( 11)
+
+;; Succ edge  11 [100.0%] 
+
+(barrier 183 182 103)
+
+;; Start of basic block ( 11) -> 10
+;; Pred edge  11
+(code_label 103 183 88 10 31 "" [1 uses])
+
+(note 88 103 89 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+
+(insn 89 88 90 10 node.h:111 (set (reg/f:DI 90 [ network.43 ])
+        (mem/f/c/i:DI (symbol_ref:DI ("network")  <var_decl 0x7f2f6c4b8be0 network>) [0 network+0 S8 A64])) 89 {*movdi_1_rex64} (nil))
+
+(insn 90 89 91 10 node.h:111 (set (reg:DI 91 [ D.49891 ])
+        (zero_extend:DI (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                    (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32]))) 123 {zero_extendsidi2_rex64} (nil))
+
+(insn 91 90 92 10 node.h:111 (parallel [
+            (set (reg:DI 92 [ D.49892 ])
+                (ashift:DI (reg:DI 91 [ D.49891 ])
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) 489 {*ashldi3_1_rex64} (nil))
+
+(insn 92 91 93 10 node.h:111 (parallel [
+            (set (reg/f:DI 93 [ D.49893 ])
+                (plus:DI (reg/f:DI 90 [ network.43 ])
+                    (reg:DI 92 [ D.49892 ])))
+            (clobber (reg:CC 17 flags))
+        ]) 253 {*adddi_1} (nil))
+
+(insn 93 92 94 10 node.h:111 (set (reg/f:DI 94 [ D.49894 ])
+        (mem/f:DI (reg/f:DI 93 [ D.49893 ]) [0 S8 A64])) 89 {*movdi_1_rex64} (nil))
+
+(insn 94 93 95 10 node.h:111 (set (reg:DI 95 [ D.49895 ])
+        (zero_extend:DI (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                    (const_int -8 [0xfffffffffffffff8])) [0 j+0 S4 A32]))) 123 {zero_extendsidi2_rex64} (nil))
+
+(insn 95 94 96 10 node.h:111 (parallel [
+            (set (reg:DI 96 [ D.49896 ])
+                (ashift:DI (reg:DI 95 [ D.49895 ])
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) 489 {*ashldi3_1_rex64} (nil))
+
+(insn 96 95 97 10 node.h:111 (parallel [
+            (set (reg/f:DI 97 [ D.49897 ])
+                (plus:DI (reg/f:DI 94 [ D.49894 ])
+                    (reg:DI 96 [ D.49896 ])))
+            (clobber (reg:CC 17 flags))
+        ]) 253 {*adddi_1} (nil))
+
+(insn 97 96 98 10 node.h:111 (set (reg:DF 123)
+        (mem/u/c/i:DF (symbol_ref/u:DI ("*.LC7") [flags 0x2]) [0 S8 A64])) 104 {*movdf_integer_rex64} (nil))
+
+(insn 98 97 99 10 node.h:111 (set (mem:DF (reg/f:DI 97 [ D.49897 ]) [0 S8 A64])
+        (reg:DF 123)) 104 {*movdf_integer_rex64} (nil))
+
+(insn 99 98 100 10 node.h:109 (parallel [
+            (set (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                        (const_int -8 [0xfffffffffffffff8])) [0 j+0 S4 A32])
+                (plus:SI (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                            (const_int -8 [0xfffffffffffffff8])) [0 j+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 252 {*addsi_1} (nil))
+;; End of basic block 10 -> ( 11)
+
+;; Succ edge  11 (fallthru)
+
+;; Start of basic block ( 10 9) -> 11
+;; Pred edge  10 (fallthru)
+;; Pred edge  9 [100.0%] 
+(code_label 100 99 101 11 30 "" [1 uses])
+
+(note 101 100 102 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+
+(insn 102 101 104 11 node.h:109 (set (reg:SI 89 [ D.44 ])
+        (mem/c/i:SI (symbol_ref:DI ("D")  <var_decl 0x7f2f6c4b8e60 D>) [0 D+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 104 102 105 11 node.h:109 (set (reg:CC 17 flags)
+        (compare:CC (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                    (const_int -8 [0xfffffffffffffff8])) [0 j+0 S4 A32])
+            (reg:SI 89 [ D.44 ]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 105 104 106 11 node.h:109 (set (pc)
+        (if_then_else (ltu (reg:CC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 103)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 103)
+;; End of basic block 11 -> ( 10 12)
+
+;; Succ edge  10
+;; Succ edge  12 (fallthru)
+
+;; Start of basic block ( 11) -> 12
+;; Pred edge  11 (fallthru)
+(note 106 105 107 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+
+(insn 107 106 108 12 node.h:105 (parallel [
+            (set (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                        (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])
+                (plus:SI (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                            (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 252 {*addsi_1} (nil))
+;; End of basic block 12 -> ( 13)
+
+;; Succ edge  13 (fallthru)
+
+;; Start of basic block ( 12 8) -> 13
+;; Pred edge  12 (fallthru)
+;; Pred edge  8 [100.0%] 
+(code_label 108 107 109 13 29 "" [1 uses])
+
+(note 109 108 110 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+
+(insn 110 109 111 13 node.h:105 (set (reg:SI 78 [ historylength.45 ])
+        (mem/c/i:SI (symbol_ref:DI ("historylength") [flags 0x2]  <var_decl 0x7f2f6c4b8a00 historylength>) [0 historylength+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 111 110 113 13 node.h:105 (set (reg:SI 79 [ historylength.46 ])
+        (reg:SI 78 [ historylength.45 ])) 47 {*movsi_1} (nil))
+
+(insn 113 111 114 13 node.h:105 (set (reg:CC 17 flags)
+        (compare:CC (reg:SI 79 [ historylength.46 ])
+            (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                    (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 114 113 115 13 node.h:105 (set (pc)
+        (if_then_else (gtu (reg:CC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 112)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 112)
+;; End of basic block 13 -> ( 9 14)
+
+;; Succ edge  9
+;; Succ edge  14 (fallthru)
+
+;; Start of basic block ( 13) -> 14
+;; Pred edge  13 (fallthru)
+(note 115 114 116 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+
+(insn 116 115 117 14 node.h:114 (set (reg:SI 98 [ debug.47 ])
+        (mem/c/i:SI (symbol_ref:DI ("debug") [flags 0x2]  <var_decl 0x7f2f6c4b8b40 debug>) [0 debug+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 117 116 118 14 node.h:114 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 98 [ debug.47 ])
+            (const_int 0 [0x0]))) 2 {*cmpsi_ccno_1} (nil))
+
+(jump_insn 118 117 119 14 node.h:114 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 133)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 133)
+;; End of basic block 14 -> ( 15 16)
+
+;; Succ edge  15 (fallthru)
+;; Succ edge  16
+
+;; Start of basic block ( 14) -> 15
+;; Pred edge  14 (fallthru)
+(note 119 118 120 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+
+(insn 120 119 121 15 node.h:114 (set (reg/f:DI 99 [ network.48 ])
+        (mem/f/c/i:DI (symbol_ref:DI ("network")  <var_decl 0x7f2f6c4b8be0 network>) [0 network+0 S8 A64])) 89 {*movdi_1_rex64} (nil))
+
+(insn 121 120 122 15 node.h:116 (set (reg:SI 100 [ D.49 ])
+        (mem/c/i:SI (symbol_ref:DI ("D")  <var_decl 0x7f2f6c4b8e60 D>) [0 D+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 122 121 123 15 node.h:116 (set (reg:DI 101 [ D.49906 ])
+        (zero_extend:DI (reg:SI 100 [ D.49 ]))) 123 {zero_extendsidi2_rex64} (nil))
+
+(insn 123 122 124 15 node.h:116 (set (reg:SI 102 [ historylength.50 ])
+        (mem/c/i:SI (symbol_ref:DI ("historylength") [flags 0x2]  <var_decl 0x7f2f6c4b8a00 historylength>) [0 historylength+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 124 123 125 15 node.h:116 (set (reg:DI 103 [ D.49908 ])
+        (sign_extend:DI (reg:SI 102 [ historylength.50 ]))) 127 {extendsidi2_rex64} (nil))
+
+(insn 125 124 126 15 node.h:116 (parallel [
+            (set (reg:DI 104 [ D.49909 ])
+                (mult:DI (reg:DI 101 [ D.49906 ])
+                    (reg:DI 103 [ D.49908 ])))
+            (clobber (reg:CC 17 flags))
+        ]) 334 {*muldi3_1} (nil))
+
+(insn 126 125 127 15 node.h:114 (parallel [
+            (set (reg:DI 105 [ D.49910 ])
+                (ashift:DI (reg:DI 104 [ D.49909 ])
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) 489 {*ashldi3_1_rex64} (nil))
+
+(insn 127 126 128 15 node.h:114 (set (reg/f:DI 106 [ D.49911 ])
+        (symbol_ref/f:DI ("*.LC9") [flags 0x2]  <string_cst 0x7f2f6ba054c0>)) 89 {*movdi_1_rex64} (nil))
+
+(insn 128 127 129 15 node.h:114 (set (reg:DI 1 dx)
+        (reg/f:DI 99 [ network.48 ])) 89 {*movdi_1_rex64} (nil))
+
+(insn 129 128 130 15 node.h:114 (set (reg:DI 4 si)
+        (reg:DI 105 [ D.49910 ])) 89 {*movdi_1_rex64} (nil))
+
+(insn 130 129 131 15 node.h:114 (set (reg:DI 5 di)
+        (reg/f:DI 106 [ D.49911 ])) 89 {*movdi_1_rex64} (nil))
+
+(insn 131 130 132 15 node.h:114 (set (reg:QI 0 ax)
+        (const_int 0 [0x0])) 62 {*movqi_1} (nil))
+
+(call_insn 132 131 133 15 node.h:114 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f2f6d752000 printf>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:QI 0 ax))
+        (expr_list:REG_DEP_TRUE (use (reg:DI 5 di))
+            (expr_list:REG_DEP_TRUE (use (reg:DI 4 si))
+                (expr_list:REG_DEP_TRUE (use (reg:DI 1 dx))
+                    (nil))))))
+;; End of basic block 15 -> ( 16)
+
+;; Succ edge  16 (fallthru)
+
+;; Start of basic block ( 14 15) -> 16
+;; Pred edge  14
+;; Pred edge  15 (fallthru)
+(code_label 133 132 134 16 33 "" [1 uses])
+
+(note 134 133 135 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
+
+(insn 135 134 136 16 node.h:117 (set (reg:SI 107 [ debug.51 ])
+        (mem/c/i:SI (symbol_ref:DI ("debug") [flags 0x2]  <var_decl 0x7f2f6c4b8b40 debug>) [0 debug+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 136 135 137 16 node.h:117 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 107 [ debug.51 ])
+            (const_int 0 [0x0]))) 2 {*cmpsi_ccno_1} (nil))
+
+(jump_insn 137 136 138 16 node.h:117 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 141)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 141)
+;; End of basic block 16 -> ( 17 18)
+
+;; Succ edge  17 (fallthru)
+;; Succ edge  18
+
+;; Start of basic block ( 16) -> 17
+;; Pred edge  16 (fallthru)
+(note 138 137 139 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
+
+(insn 139 138 140 17 node.h:117 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC10") [flags 0x2]  <string_cst 0x7f2f6b9d3930>)) 89 {*movdi_1_rex64} (nil))
+
+(call_insn 140 139 141 17 node.h:117 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f2f6d752700 __builtin_puts>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:DI 5 di))
+        (nil)))
+;; End of basic block 17 -> ( 18)
+
+;; Succ edge  18 (fallthru)
+
+;; Start of basic block ( 16 17) -> 18
+;; Pred edge  16
+;; Pred edge  17 (fallthru)
+(code_label 141 140 142 18 34 "" [1 uses])
+
+(note 142 141 143 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
+
+(insn 143 142 144 18 node.h:118 (set (reg:QI 0 ax)
+        (const_int 0 [0x0])) 62 {*movqi_1} (nil))
+
+(call_insn 144 143 145 18 node.h:118 (call (mem:QI (symbol_ref:DI ("update_input") [flags 0x3]  <function_decl 0x7f2f6c26e900 update_input>) [0 S1 A8])
+        (const_int 0 [0x0])) 639 {*call_0} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:QI 0 ax))
+        (nil)))
+
+(insn 145 144 146 18 node.h:119 (set (reg:SI 108 [ debug.52 ])
+        (mem/c/i:SI (symbol_ref:DI ("debug") [flags 0x2]  <var_decl 0x7f2f6c4b8b40 debug>) [0 debug+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 146 145 147 18 node.h:119 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 108 [ debug.52 ])
+            (const_int 0 [0x0]))) 2 {*cmpsi_ccno_1} (nil))
+
+(jump_insn 147 146 148 18 node.h:119 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 151)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 151)
+;; End of basic block 18 -> ( 19 20)
+
+;; Succ edge  19 (fallthru)
+;; Succ edge  20
+
+;; Start of basic block ( 18) -> 19
+;; Pred edge  18 (fallthru)
+(note 148 147 149 19 [bb 19] NOTE_INSN_BASIC_BLOCK)
+
+(insn 149 148 150 19 node.h:119 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC11") [flags 0x2]  <string_cst 0x7f2f6ba05640>)) 89 {*movdi_1_rex64} (nil))
+
+(call_insn 150 149 151 19 node.h:119 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f2f6d752700 __builtin_puts>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:DI 5 di))
+        (nil)))
+;; End of basic block 19 -> ( 20)
+
+;; Succ edge  20 (fallthru)
+
+;; Start of basic block ( 18 19) -> 20
+;; Pred edge  18
+;; Pred edge  19 (fallthru)
+(code_label 151 150 152 20 35 "" [1 uses])
+
+(note 152 151 153 20 [bb 20] NOTE_INSN_BASIC_BLOCK)
+
+(insn 153 152 154 20 node.h:120 (set (reg:SI 109 [ input_list_size.53 ])
+        (mem/c/i:SI (symbol_ref:DI ("input_list_size")  <var_decl 0x7f2f6c4b8d20 input_list_size>) [0 input_list_size+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 154 153 155 20 node.h:120 (set (reg:SI 110 [ output_list_size.54 ])
+        (mem/c/i:SI (symbol_ref:DI ("output_list_size")  <var_decl 0x7f2f6c4b8dc0 output_list_size>) [0 output_list_size+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 155 154 156 20 node.h:120 (parallel [
+            (set (reg:SI 111 [ D.49920 ])
+                (plus:SI (reg:SI 109 [ input_list_size.53 ])
+                    (reg:SI 110 [ output_list_size.54 ])))
+            (clobber (reg:CC 17 flags))
+        ]) 252 {*addsi_1} (nil))
+
+(insn 156 155 157 20 node.h:120 (set (reg:SI 112 [ D.49921 ])
+        (reg:SI 111 [ D.49920 ])) 47 {*movsi_1} (nil))
+
+(insn 157 156 158 20 node.h:120 (set (reg:SI 113 [ network_size.55 ])
+        (mem/c/i:SI (symbol_ref:DI ("network_size") [flags 0x2]  <var_decl 0x7f2f6c4b8aa0 network_size>) [0 network_size+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 158 157 159 20 node.h:120 (set (reg:CC 17 flags)
+        (compare:CC (reg:SI 112 [ D.49921 ])
+            (reg:SI 113 [ network_size.55 ]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 159 158 160 20 node.h:120 (set (pc)
+        (if_then_else (leu (reg:CC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 172)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 172)
+;; End of basic block 20 -> ( 21 22)
+
+;; Succ edge  21 (fallthru)
+;; Succ edge  22
+
+;; Start of basic block ( 20) -> 21
+;; Pred edge  20 (fallthru)
+(note 160 159 161 21 [bb 21] NOTE_INSN_BASIC_BLOCK)
+
+(insn 161 160 162 21 node.h:122 (set (reg:SI 114 [ output_list_size.56 ])
+        (mem/c/i:SI (symbol_ref:DI ("output_list_size")  <var_decl 0x7f2f6c4b8dc0 output_list_size>) [0 output_list_size+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 162 161 163 21 node.h:122 (set (reg:SI 115 [ input_list_size.57 ])
+        (mem/c/i:SI (symbol_ref:DI ("input_list_size")  <var_decl 0x7f2f6c4b8d20 input_list_size>) [0 input_list_size+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 163 162 164 21 node.h:122 (parallel [
+            (set (reg:SI 116 [ D.49927 ])
+                (plus:SI (reg:SI 114 [ output_list_size.56 ])
+                    (reg:SI 115 [ input_list_size.57 ])))
+            (clobber (reg:CC 17 flags))
+        ]) 252 {*addsi_1} (nil))
+
+(insn 164 163 165 21 node.h:121 (set (reg:SI 117 [ D.49928 ])
+        (reg:SI 116 [ D.49927 ])) 47 {*movsi_1} (nil))
+
+(insn 165 164 166 21 node.h:121 (set (reg:SI 118 [ network_size.58 ])
+        (mem/c/i:SI (symbol_ref:DI ("network_size") [flags 0x2]  <var_decl 0x7f2f6c4b8aa0 network_size>) [0 network_size+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 166 165 167 21 node.h:121 (parallel [
+            (set (reg:SI 119 [ D.49930 ])
+                (minus:SI (reg:SI 117 [ D.49928 ])
+                    (reg:SI 118 [ network_size.58 ])))
+            (clobber (reg:CC 17 flags))
+        ]) 291 {*subsi_1} (nil))
+
+(insn 167 166 168 21 node.h:121 (set (reg/f:DI 120 [ D.49931 ])
+        (symbol_ref/f:DI ("*.LC12") [flags 0x2]  <string_cst 0x7f2f6ba05700>)) 89 {*movdi_1_rex64} (nil))
+
+(insn 168 167 169 21 node.h:121 (set (reg:SI 4 si)
+        (reg:SI 119 [ D.49930 ])) 47 {*movsi_1} (nil))
+
+(insn 169 168 170 21 node.h:121 (set (reg:DI 5 di)
+        (reg/f:DI 120 [ D.49931 ])) 89 {*movdi_1_rex64} (nil))
+
+(insn 170 169 171 21 node.h:121 (set (reg:QI 0 ax)
+        (const_int 0 [0x0])) 62 {*movqi_1} (nil))
+
+(call_insn 171 170 172 21 node.h:121 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f2f6d752000 printf>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:QI 0 ax))
+        (expr_list:REG_DEP_TRUE (use (reg:DI 5 di))
+            (expr_list:REG_DEP_TRUE (use (reg:SI 4 si))
+                (nil)))))
+;; End of basic block 21 -> ( 22)
+
+;; Succ edge  22 (fallthru)
+
+;; Start of basic block ( 20 21) -> 22
+;; Pred edge  20
+;; Pred edge  21 (fallthru)
+(code_label 172 171 173 22 36 "" [1 uses])
+
+(note 173 172 174 22 [bb 22] NOTE_INSN_BASIC_BLOCK)
+
+(insn 174 173 175 22 node.h:124 (set (reg:QI 0 ax)
+        (const_int 0 [0x0])) 62 {*movqi_1} (nil))
+
+(call_insn 175 174 184 22 node.h:124 (call (mem:QI (symbol_ref:DI ("W_init") [flags 0x3]  <function_decl 0x7f2f6c26e600 W_init>) [0 S1 A8])
+        (const_int 0 [0x0])) 639 {*call_0} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:QI 0 ax))
+        (nil)))
+
+(jump_insn 184 175 185 22 (set (pc)
+        (label_ref 178)) -1 (nil)
+ -> 178)
+;; End of basic block 22 -> ( 23)
+
+;; Succ edge  23
+
+(barrier 185 184 187)
+
+;; Start of basic block ( 2) -> 24
+;; Pred edge  2
+(code_label 187 185 186 24 37 "" [1 uses])
+
+(note 186 187 188 24 [bb 24] NOTE_INSN_BASIC_BLOCK)
+
+(insn 188 186 189 24 node.h:91 (const_int 0 [0x0]) -1 (nil))
+
+(jump_insn 189 188 190 24 (set (pc)
+        (label_ref 178)) -1 (nil)
+ -> 178)
+;; End of basic block 24 -> ( 23)
+
+;; Succ edge  23 [100.0%] 
+
+(barrier 190 189 192)
+
+;; Start of basic block ( 3) -> 25
+;; Pred edge  3
+(code_label 192 190 191 25 38 "" [1 uses])
+
+(note 191 192 193 25 [bb 25] NOTE_INSN_BASIC_BLOCK)
+
+(insn 193 191 194 25 node.h:92 (const_int 0 [0x0]) -1 (nil))
+
+(jump_insn 194 193 195 25 (set (pc)
+        (label_ref 178)) -1 (nil)
+ -> 178)
+;; End of basic block 25 -> ( 23)
+
+;; Succ edge  23 [100.0%] 
+
+(barrier 195 194 197)
+
+;; Start of basic block ( 4) -> 26
+;; Pred edge  4
+(code_label 197 195 196 26 39 "" [1 uses])
+
+(note 196 197 198 26 [bb 26] NOTE_INSN_BASIC_BLOCK)
+
+(insn 198 196 199 26 node.h:93 (const_int 0 [0x0]) -1 (nil))
+
+(jump_insn 199 198 200 26 (set (pc)
+        (label_ref 178)) -1 (nil)
+ -> 178)
+;; End of basic block 26 -> ( 23)
+
+;; Succ edge  23 [100.0%] 
+
+(barrier 200 199 202)
+
+;; Start of basic block ( 5) -> 27
+;; Pred edge  5
+(code_label 202 200 201 27 40 "" [1 uses])
+
+(note 201 202 203 27 [bb 27] NOTE_INSN_BASIC_BLOCK)
+
+(insn 203 201 178 27 node.h:94 (const_int 0 [0x0]) -1 (nil))
+;; End of basic block 27 -> ( 23)
+
+;; Succ edge  23 [100.0%]  (fallthru)
+
+;; Start of basic block ( 27 22 24 25 26) -> 23
+;; Pred edge  27 [100.0%]  (fallthru)
+;; Pred edge  22
+;; Pred edge  24 [100.0%] 
+;; Pred edge  25 [100.0%] 
+;; Pred edge  26 [100.0%] 
+(code_label 178 203 179 23 22 "" [4 uses])
+
+(note 179 178 0 23 [bb 23] NOTE_INSN_BASIC_BLOCK)
+;; End of basic block 23 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+
+
+;; Function network_term (network_term)
+
+(note 1 0 3 NOTE_INSN_DELETED)
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY (fallthru)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 5 2 6 2 node.h:130 (set (reg:SI 58 [ debug.20 ])
+        (mem/c/i:SI (symbol_ref:DI ("debug") [flags 0x2]  <var_decl 0x7f2f6c4b8b40 debug>) [0 debug+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 6 5 7 2 node.h:130 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 58 [ debug.20 ])
+            (const_int 0 [0x0]))) 2 {*cmpsi_ccno_1} (nil))
+
+(jump_insn 7 6 8 2 node.h:130 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 11)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 11)
+;; End of basic block 2 -> ( 3 4)
+
+;; Succ edge  3 (fallthru)
+;; Succ edge  4
+
+;; Start of basic block ( 2) -> 3
+;; Pred edge  2 (fallthru)
+(note 8 7 9 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 9 8 10 3 node.h:130 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC13") [flags 0x2]  <string_cst 0x7f2f6b9d3af0>)) 89 {*movdi_1_rex64} (nil))
+
+(call_insn 10 9 11 3 node.h:130 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f2f6d752700 __builtin_puts>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:DI 5 di))
+        (nil)))
+;; End of basic block 3 -> ( 4)
+
+;; Succ edge  4 (fallthru)
+
+;; Start of basic block ( 2 3) -> 4
+;; Pred edge  2
+;; Pred edge  3 (fallthru)
+(code_label 11 10 12 4 42 "" [1 uses])
+
+(note 12 11 13 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 13 12 48 4 node.h:131 (set (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])
+        (const_int 0 [0x0])) 47 {*movsi_1} (nil))
+
+(jump_insn 48 13 49 4 node.h:131 (set (pc)
+        (label_ref 25)) -1 (nil)
+ -> 25)
+;; End of basic block 4 -> ( 6)
+
+;; Succ edge  6 [100.0%] 
+
+(barrier 49 48 29)
+
+;; Start of basic block ( 6) -> 5
+;; Pred edge  6
+(code_label 29 49 16 5 44 "" [1 uses])
+
+(note 16 29 17 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 17 16 18 5 node.h:133 (set (reg/f:DI 61 [ network.21 ])
+        (mem/f/c/i:DI (symbol_ref:DI ("network")  <var_decl 0x7f2f6c4b8be0 network>) [0 network+0 S8 A64])) 89 {*movdi_1_rex64} (nil))
+
+(insn 18 17 19 5 node.h:133 (set (reg:DI 62 [ D.49841 ])
+        (zero_extend:DI (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                    (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32]))) 123 {zero_extendsidi2_rex64} (nil))
+
+(insn 19 18 20 5 node.h:133 (parallel [
+            (set (reg:DI 63 [ D.49842 ])
+                (ashift:DI (reg:DI 62 [ D.49841 ])
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) 489 {*ashldi3_1_rex64} (nil))
+
+(insn 20 19 21 5 node.h:133 (parallel [
+            (set (reg/f:DI 64 [ D.49843 ])
+                (plus:DI (reg/f:DI 61 [ network.21 ])
+                    (reg:DI 63 [ D.49842 ])))
+            (clobber (reg:CC 17 flags))
+        ]) 253 {*adddi_1} (nil))
+
+(insn 21 20 22 5 node.h:133 (set (reg/f:DI 65 [ D.49844 ])
+        (mem/f:DI (reg/f:DI 64 [ D.49843 ]) [0 S8 A64])) 89 {*movdi_1_rex64} (nil))
+
+(insn 22 21 23 5 node.h:133 (set (reg:DI 5 di)
+        (reg/f:DI 65 [ D.49844 ])) 89 {*movdi_1_rex64} (nil))
+
+(call_insn 23 22 24 5 node.h:133 (call (mem:QI (symbol_ref:DI ("free") [flags 0x41]  <function_decl 0x7f2f6d767c00 free>) [0 S1 A8])
+        (const_int 0 [0x0])) 639 {*call_0} (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (expr_list:REG_DEP_TRUE (use (reg:DI 5 di))
+        (nil)))
+
+(insn 24 23 25 5 node.h:131 (parallel [
+            (set (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                        (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])
+                (plus:SI (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                            (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 252 {*addsi_1} (nil))
+;; End of basic block 5 -> ( 6)
+
+;; Succ edge  6 (fallthru)
+
+;; Start of basic block ( 5 4) -> 6
+;; Pred edge  5 (fallthru)
+;; Pred edge  4 [100.0%] 
+(code_label 25 24 26 6 43 "" [1 uses])
+
+(note 26 25 27 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+(insn 27 26 28 6 node.h:131 (set (reg:SI 59 [ historylength.22 ])
+        (mem/c/i:SI (symbol_ref:DI ("historylength") [flags 0x2]  <var_decl 0x7f2f6c4b8a00 historylength>) [0 historylength+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 28 27 30 6 node.h:131 (set (reg:SI 60 [ historylength.23 ])
+        (reg:SI 59 [ historylength.22 ])) 47 {*movsi_1} (nil))
+
+(insn 30 28 31 6 node.h:131 (set (reg:CC 17 flags)
+        (compare:CC (reg:SI 60 [ historylength.23 ])
+            (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                    (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 31 30 32 6 node.h:131 (set (pc)
+        (if_then_else (gtu (reg:CC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 29)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 29)
+;; End of basic block 6 -> ( 5 7)
+
+;; Succ edge  5
+;; Succ edge  7 (fallthru)
+
+;; Start of basic block ( 6) -> 7
+;; Pred edge  6 (fallthru)
+(note 32 31 33 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+(insn 33 32 34 7 node.h:135 (set (reg/f:DI 66 [ network.24 ])
+        (mem/f/c/i:DI (symbol_ref:DI ("network")  <var_decl 0x7f2f6c4b8be0 network>) [0 network+0 S8 A64])) 89 {*movdi_1_rex64} (nil))
+
+(insn 34 33 35 7 node.h:135 (set (reg:DI 5 di)
+        (reg/f:DI 66 [ network.24 ])) 89 {*movdi_1_rex64} (nil))
+
+(call_insn 35 34 36 7 node.h:135 (call (mem:QI (symbol_ref:DI ("free") [flags 0x41]  <function_decl 0x7f2f6d767c00 free>) [0 S1 A8])
+        (const_int 0 [0x0])) 639 {*call_0} (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (expr_list:REG_DEP_TRUE (use (reg:DI 5 di))
+        (nil)))
+
+(insn 36 35 37 7 node.h:136 (set (reg:SI 67 [ debug.25 ])
+        (mem/c/i:SI (symbol_ref:DI ("debug") [flags 0x2]  <var_decl 0x7f2f6c4b8b40 debug>) [0 debug+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 37 36 38 7 node.h:136 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 67 [ debug.25 ])
+            (const_int 0 [0x0]))) 2 {*cmpsi_ccno_1} (nil))
+
+(jump_insn 38 37 39 7 node.h:136 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 42)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 42)
+;; End of basic block 7 -> ( 8 9)
+
+;; Succ edge  8 (fallthru)
+;; Succ edge  9
+
+;; Start of basic block ( 7) -> 8
+;; Pred edge  7 (fallthru)
+(note 39 38 40 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+
+(insn 40 39 41 8 node.h:136 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC14") [flags 0x2]  <string_cst 0x7f2f6b9c8f00>)) 89 {*movdi_1_rex64} (nil))
+
+(call_insn 41 40 42 8 node.h:136 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f2f6d752700 __builtin_puts>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:DI 5 di))
+        (nil)))
+;; End of basic block 8 -> ( 9)
+
+;; Succ edge  9 (fallthru)
+
+;; Start of basic block ( 7 8) -> 9
+;; Pred edge  7
+;; Pred edge  8 (fallthru)
+(code_label 42 41 43 9 45 "" [1 uses])
+
+(note 43 42 44 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+
+(insn 44 43 45 9 node.h:137 (set (reg:QI 0 ax)
+        (const_int 0 [0x0])) 62 {*movqi_1} (nil))
+
+(call_insn 45 44 0 9 node.h:137 (call (mem:QI (symbol_ref:DI ("W_term") [flags 0x3]  <function_decl 0x7f2f6c26e700 W_term>) [0 S1 A8])
+        (const_int 0 [0x0])) 639 {*call_0} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:QI 0 ax))
+        (nil)))
+;; End of basic block 9 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+
+
+;; Function sigmoid (sigmoid)
+
+(note 1 0 4 NOTE_INSN_DELETED)
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY (fallthru)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(insn 2 4 3 2 node.h:141 (set (mem/c/i:DF (plus:DI (reg/f:DI 20 frame)
+                (const_int -8 [0xfffffffffffffff8])) [0 X+0 S8 A64])
+        (reg:DF 21 xmm0 [ X ])) 104 {*movdf_integer_rex64} (nil))
+
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 6 3 7 2 node.h:145 (set (reg:DF 61)
+        (mem/c/i:DF (plus:DI (reg/f:DI 20 frame)
+                (const_int -8 [0xfffffffffffffff8])) [0 X+0 S8 A64])) 104 {*movdf_integer_rex64} (nil))
+
+(insn 7 6 8 2 node.h:145 (set (reg:DF 62)
+        (mem/u/c/i:DF (symbol_ref/u:DI ("*.LC15") [flags 0x2]) [0 S8 A64])) 104 {*movdf_integer_rex64} (expr_list:REG_EQUAL (const_double:DF 2.0e+1 [0x0.ap+5])
+        (nil)))
+
+(insn 8 7 9 2 node.h:145 (set (reg:DF 58 [ D.49835 ])
+        (div:DF (reg:DF 61)
+            (reg:DF 62))) 724 {*fop_df_1_sse} (nil))
+
+(insn 9 8 10 2 node.h:145 (set (reg:DF 21 xmm0)
+        (reg:DF 58 [ D.49835 ])) 104 {*movdf_integer_rex64} (nil))
+
+(call_insn/u 10 9 11 2 node.h:145 (set (reg:DF 21 xmm0)
+        (call (mem:QI (symbol_ref:DI ("tanh") [flags 0x41]  <function_decl 0x7f2f6d730b00 tanh>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (expr_list:REG_DEP_TRUE (use (reg:DF 21 xmm0))
+        (nil)))
+
+(insn 11 10 12 2 node.h:145 (set (reg:DF 59 [ D.49834 ])
+        (reg:DF 21 xmm0)) 104 {*movdf_integer_rex64} (nil))
+
+(insn 12 11 16 2 node.h:145 (set (reg:DF 60 [ <retval> ])
+        (reg:DF 59 [ D.49834 ])) 104 {*movdf_integer_rex64} (nil))
+
+(insn 16 12 19 2 node.h:146 (set (reg/i:DF 21 xmm0)
+        (reg:DF 60 [ <retval> ])) 104 {*movdf_integer_rex64} (nil))
+
+(insn 19 16 0 2 node.h:146 (use (reg/i:DF 21 xmm0)) -1 (nil))
+;; End of basic block 2 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+
+
+;; Function network_forward (network_forward)
+
+(note 1 0 4 NOTE_INSN_DELETED)
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY (fallthru)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(insn 2 4 3 2 node.h:149 (set (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                (const_int -20 [0xffffffffffffffec])) [0 t+0 S4 A32])
+        (reg:SI 5 di [ t ])) 47 {*movsi_1} (nil))
+
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 6 3 7 2 node.h:151 (set (reg:SI 58 [ historylength.5 ])
+        (mem/c/i:SI (symbol_ref:DI ("historylength") [flags 0x2]  <var_decl 0x7f2f6c4b8a00 historylength>) [0 historylength+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 7 6 8 2 node.h:151 (set (reg:SI 59 [ historylength.6 ])
+        (reg:SI 58 [ historylength.5 ])) 47 {*movsi_1} (nil))
+
+(insn 8 7 9 2 node.h:151 (set (reg:CC 17 flags)
+        (compare:CC (reg:SI 59 [ historylength.6 ])
+            (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                    (const_int -20 [0xffffffffffffffec])) [0 t+0 S4 A32]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 9 8 10 2 node.h:151 (set (pc)
+        (if_then_else (gtu (reg:CC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 25)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 25)
+;; End of basic block 2 -> ( 3 5)
+
+;; Succ edge  3 (fallthru)
+;; Succ edge  5
+
+;; Start of basic block ( 2) -> 3
+;; Pred edge  2 (fallthru)
+(note 10 9 11 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 11 10 12 3 node.h:153 (set (reg:SI 60 [ debug.7 ])
+        (mem/c/i:SI (symbol_ref:DI ("debug") [flags 0x2]  <var_decl 0x7f2f6c4b8b40 debug>) [0 debug+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 12 11 13 3 node.h:153 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 60 [ debug.7 ])
+            (const_int 0 [0x0]))) 2 {*cmpsi_ccno_1} (nil))
+
+(jump_insn 13 12 14 3 node.h:153 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref:DI 131)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 131)
+;; End of basic block 3 -> ( 4 13)
+
+;; Succ edge  4 (fallthru)
+;; Succ edge  13
+
+;; Start of basic block ( 3) -> 4
+;; Pred edge  3 (fallthru)
+(note 14 13 15 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 15 14 16 4 node.h:153 (set (reg:SI 61 [ historylength.8 ])
+        (mem/c/i:SI (symbol_ref:DI ("historylength") [flags 0x2]  <var_decl 0x7f2f6c4b8a00 historylength>) [0 historylength+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 16 15 17 4 node.h:153 (set (reg/f:DI 62 [ D.49789 ])
+        (symbol_ref/f:DI ("*.LC16") [flags 0x2]  <string_cst 0x7f2f6ba07cd0>)) 89 {*movdi_1_rex64} (nil))
+
+(insn 17 16 18 4 node.h:153 (set (reg:SI 4 si)
+        (reg:SI 61 [ historylength.8 ])) 47 {*movsi_1} (nil))
+
+(insn 18 17 19 4 node.h:153 (set (reg:DI 5 di)
+        (reg/f:DI 62 [ D.49789 ])) 89 {*movdi_1_rex64} (nil))
+
+(insn 19 18 20 4 node.h:153 (set (reg:QI 0 ax)
+        (const_int 0 [0x0])) 62 {*movqi_1} (nil))
+
+(call_insn 20 19 121 4 node.h:153 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f2f6d752000 printf>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:QI 0 ax))
+        (expr_list:REG_DEP_TRUE (use (reg:DI 5 di))
+            (expr_list:REG_DEP_TRUE (use (reg:SI 4 si))
+                (nil)))))
+
+(jump_insn 121 20 122 4 node.h:155 (set (pc)
+        (label_ref 119)) -1 (nil)
+ -> 119)
+;; End of basic block 4 -> ( 11)
+
+;; Succ edge  11 [100.0%] 
+
+(barrier 122 121 25)
+
+;; Start of basic block ( 2) -> 5
+;; Pred edge  2
+(code_label 25 122 26 5 48 "" [1 uses])
+
+(note 26 25 27 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 27 26 28 5 node.h:157 (set (reg/f:DI 63 [ D.49790 ])
+        (symbol_ref/f:DI ("*.LC17") [flags 0x2]  <string_cst 0x7f2f6b9d3c78>)) 89 {*movdi_1_rex64} (nil))
+
+(insn 28 27 29 5 node.h:157 (set (reg:SI 106)
+        (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                (const_int -20 [0xffffffffffffffec])) [0 t+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 29 28 30 5 node.h:157 (set (reg:SI 4 si)
+        (reg:SI 106)) 47 {*movsi_1} (nil))
+
+(insn 30 29 31 5 node.h:157 (set (reg:DI 5 di)
+        (reg/f:DI 63 [ D.49790 ])) 89 {*movdi_1_rex64} (nil))
+
+(insn 31 30 32 5 node.h:157 (set (reg:QI 0 ax)
+        (const_int 0 [0x0])) 62 {*movqi_1} (nil))
+
+(call_insn 32 31 33 5 node.h:157 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f2f6d752000 printf>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:QI 0 ax))
+        (expr_list:REG_DEP_TRUE (use (reg:DI 5 di))
+            (expr_list:REG_DEP_TRUE (use (reg:SI 4 si))
+                (nil)))))
+
+(insn 33 32 123 5 node.h:165 (set (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])
+        (const_int 0 [0x0])) 47 {*movsi_1} (nil))
+
+(jump_insn 123 33 124 5 node.h:165 (set (pc)
+        (label_ref 72)) -1 (nil)
+ -> 72)
+;; End of basic block 5 -> ( 7)
+
+;; Succ edge  7 [100.0%] 
+
+(barrier 124 123 75)
+
+;; Start of basic block ( 7) -> 6
+;; Pred edge  7
+(code_label 75 124 36 6 52 "" [1 uses])
+
+(note 36 75 37 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+(insn 37 36 38 6 node.h:167 (set (reg/f:DI 65 [ network.9 ])
+        (mem/f/c/i:DI (symbol_ref:DI ("network")  <var_decl 0x7f2f6c4b8be0 network>) [0 network+0 S8 A64])) 89 {*movdi_1_rex64} (nil))
+
+(insn 38 37 39 6 node.h:167 (set (reg:DI 66 [ D.49792 ])
+        (zero_extend:DI (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                    (const_int -20 [0xffffffffffffffec])) [0 t+0 S4 A32]))) 123 {zero_extendsidi2_rex64} (nil))
+
+(insn 39 38 40 6 node.h:167 (parallel [
+            (set (reg:DI 67 [ D.49793 ])
+                (ashift:DI (reg:DI 66 [ D.49792 ])
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) 489 {*ashldi3_1_rex64} (nil))
+
+(insn 40 39 41 6 node.h:167 (parallel [
+            (set (reg/f:DI 68 [ D.49794 ])
+                (plus:DI (reg/f:DI 65 [ network.9 ])
+                    (reg:DI 67 [ D.49793 ])))
+            (clobber (reg:CC 17 flags))
+        ]) 253 {*adddi_1} (nil))
+
+(insn 41 40 42 6 node.h:167 (set (reg/f:DI 69 [ D.49795 ])
+        (mem/f:DI (reg/f:DI 68 [ D.49794 ]) [0 S8 A64])) 89 {*movdi_1_rex64} (nil))
+
+(insn 42 41 43 6 node.h:167 (set (reg:DI 70 [ D.49796 ])
+        (zero_extend:DI (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                    (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32]))) 123 {zero_extendsidi2_rex64} (nil))
+
+(insn 43 42 44 6 node.h:167 (parallel [
+            (set (reg:DI 71 [ D.49797 ])
+                (ashift:DI (reg:DI 70 [ D.49796 ])
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) 489 {*ashldi3_1_rex64} (nil))
+
+(insn 44 43 45 6 node.h:167 (parallel [
+            (set (reg/f:DI 72 [ D.49798 ])
+                (plus:DI (reg/f:DI 69 [ D.49795 ])
+                    (reg:DI 71 [ D.49797 ])))
+            (clobber (reg:CC 17 flags))
+        ]) 253 {*adddi_1} (nil))
+
+(insn 45 44 46 6 node.h:170 (set (reg/f:DI 73 [ network.10 ])
+        (mem/f/c/i:DI (symbol_ref:DI ("network")  <var_decl 0x7f2f6c4b8be0 network>) [0 network+0 S8 A64])) 89 {*movdi_1_rex64} (nil))
+
+(insn 46 45 47 6 node.h:170 (set (reg:SI 107)
+        (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                (const_int -20 [0xffffffffffffffec])) [0 t+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 47 46 48 6 node.h:170 (parallel [
+            (set (reg:SI 74 [ D.49800 ])
+                (plus:SI (reg:SI 107)
+                    (const_int -1 [0xffffffffffffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) 252 {*addsi_1} (expr_list:REG_EQUAL (plus:SI (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                    (const_int -20 [0xffffffffffffffec])) [0 t+0 S4 A32])
+            (const_int -1 [0xffffffffffffffff]))
+        (nil)))
+
+(insn 48 47 49 6 node.h:170 (set (reg:DI 75 [ D.49801 ])
+        (zero_extend:DI (reg:SI 74 [ D.49800 ]))) 123 {zero_extendsidi2_rex64} (nil))
+
+(insn 49 48 50 6 node.h:170 (parallel [
+            (set (reg:DI 76 [ D.49802 ])
+                (ashift:DI (reg:DI 75 [ D.49801 ])
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) 489 {*ashldi3_1_rex64} (nil))
+
+(insn 50 49 51 6 node.h:170 (parallel [
+            (set (reg/f:DI 77 [ D.49803 ])
+                (plus:DI (reg/f:DI 73 [ network.10 ])
+                    (reg:DI 76 [ D.49802 ])))
+            (clobber (reg:CC 17 flags))
+        ]) 253 {*adddi_1} (nil))
+
+(insn 51 50 52 6 node.h:170 (set (reg/f:DI 78 [ D.49804 ])
+        (mem/f:DI (reg/f:DI 77 [ D.49803 ]) [0 S8 A64])) 89 {*movdi_1_rex64} (nil))
+
+(insn 52 51 53 6 node.h:169 (set (reg/f:DI 79 [ W.11 ])
+        (mem/f/c/i:DI (symbol_ref:DI ("W")  <var_decl 0x7f2f6c4b8c80 W>) [0 W+0 S8 A64])) 89 {*movdi_1_rex64} (nil))
+
+(insn 53 52 54 6 node.h:169 (set (reg:SI 80 [ D.12 ])
+        (mem/c/i:SI (symbol_ref:DI ("D")  <var_decl 0x7f2f6c4b8e60 D>) [0 D+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 54 53 55 6 node.h:169 (parallel [
+            (set (reg:SI 81 [ D.49807 ])
+                (mult:SI (reg:SI 80 [ D.12 ])
+                    (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                            (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])))
+            (clobber (reg:CC 17 flags))
+        ]) 333 {*mulsi3_1} (nil))
+
+(insn 55 54 56 6 node.h:167 (set (reg:DI 82 [ D.49808 ])
+        (zero_extend:DI (reg:SI 81 [ D.49807 ]))) 123 {zero_extendsidi2_rex64} (nil))
+
+(insn 56 55 57 6 node.h:169 (parallel [
+            (set (reg:DI 83 [ D.49809 ])
+                (ashift:DI (reg:DI 82 [ D.49808 ])
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) 489 {*ashldi3_1_rex64} (nil))
+
+(insn 57 56 58 6 node.h:167 (parallel [
+            (set (reg/f:DI 84 [ D.49810 ])
+                (plus:DI (reg/f:DI 79 [ W.11 ])
+                    (reg:DI 83 [ D.49809 ])))
+            (clobber (reg:CC 17 flags))
+        ]) 253 {*adddi_1} (nil))
+
+(insn 58 57 59 6 node.h:167 (set (reg:SI 85 [ D.13 ])
+        (mem/c/i:SI (symbol_ref:DI ("D")  <var_decl 0x7f2f6c4b8e60 D>) [0 D+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 59 58 60 6 node.h:167 (set (reg:SI 86 [ D.14 ])
+        (reg:SI 85 [ D.13 ])) 47 {*movsi_1} (nil))
+
+(insn 60 59 61 6 node.h:167 (set (reg:SI 37 r8)
+        (const_int 1 [0x1])) 47 {*movsi_1} (nil))
+
+(insn 61 60 62 6 node.h:167 (set (reg:DI 2 cx)
+        (reg/f:DI 78 [ D.49804 ])) 89 {*movdi_1_rex64} (nil))
+
+(insn 62 61 63 6 node.h:167 (set (reg:SI 1 dx)
+        (const_int 1 [0x1])) 47 {*movsi_1} (nil))
+
+(insn 63 62 64 6 node.h:167 (set (reg:DI 4 si)
+        (reg/f:DI 84 [ D.49810 ])) 89 {*movdi_1_rex64} (nil))
+
+(insn 64 63 65 6 node.h:167 (set (reg:SI 5 di)
+        (reg:SI 86 [ D.14 ])) 47 {*movsi_1} (nil))
+
+(call_insn 65 64 66 6 node.h:167 (set (reg:DF 21 xmm0)
+        (call (mem:QI (symbol_ref:DI ("cblas_ddot") [flags 0x41]  <function_decl 0x7f2f6bb10e00 cblas_ddot>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:SI 5 di))
+        (expr_list:REG_DEP_TRUE (use (reg:DI 4 si))
+            (expr_list:REG_DEP_TRUE (use (reg:SI 1 dx))
+                (expr_list:REG_DEP_TRUE (use (reg:DI 2 cx))
+                    (expr_list:REG_DEP_TRUE (use (reg:SI 37 r8))
+                        (nil)))))))
+
+(insn 66 65 67 6 node.h:167 (set (reg:DF 87 [ D.49813 ])
+        (reg:DF 21 xmm0)) 104 {*movdf_integer_rex64} (nil))
+
+(insn 67 66 68 6 node.h:167 (set (reg:DF 21 xmm0)
+        (reg:DF 87 [ D.49813 ])) 104 {*movdf_integer_rex64} (nil))
+
+(call_insn 68 67 69 6 node.h:167 (set (reg:DF 21 xmm0)
+        (call (mem:QI (symbol_ref:DI ("sigmoid") [flags 0x3]  <function_decl 0x7f2f6c26ec00 sigmoid>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:DF 21 xmm0))
+        (nil)))
+
+(insn 69 68 70 6 node.h:167 (set (reg:DF 88 [ D.49814 ])
+        (reg:DF 21 xmm0)) 104 {*movdf_integer_rex64} (nil))
+
+(insn 70 69 71 6 node.h:167 (set (mem:DF (reg/f:DI 72 [ D.49798 ]) [0 S8 A64])
+        (reg:DF 88 [ D.49814 ])) 104 {*movdf_integer_rex64} (nil))
+
+(insn 71 70 72 6 node.h:165 (parallel [
+            (set (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                        (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])
+                (plus:SI (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                            (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 252 {*addsi_1} (nil))
+;; End of basic block 6 -> ( 7)
+
+;; Succ edge  7 (fallthru)
+
+;; Start of basic block ( 6 5) -> 7
+;; Pred edge  6 (fallthru)
+;; Pred edge  5 [100.0%] 
+(code_label 72 71 73 7 51 "" [1 uses])
+
+(note 73 72 74 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+(insn 74 73 76 7 node.h:165 (set (reg:SI 64 [ network_size.15 ])
+        (mem/c/i:SI (symbol_ref:DI ("network_size") [flags 0x2]  <var_decl 0x7f2f6c4b8aa0 network_size>) [0 network_size+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 76 74 77 7 node.h:165 (set (reg:CC 17 flags)
+        (compare:CC (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                    (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])
+            (reg:SI 64 [ network_size.15 ]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 77 76 78 7 node.h:165 (set (pc)
+        (if_then_else (ltu (reg:CC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 75)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 75)
+;; End of basic block 7 -> ( 6 8)
+
+;; Succ edge  6
+;; Succ edge  8 (fallthru)
+
+;; Start of basic block ( 7) -> 8
+;; Pred edge  7 (fallthru)
+(note 78 77 79 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+
+(insn 79 78 80 8 node.h:172 (set (reg/f:DI 89 [ D.49816 ])
+        (symbol_ref/f:DI ("*.LC18") [flags 0x2]  <string_cst 0x7f2f6b9c8f30>)) 89 {*movdi_1_rex64} (nil))
+
+(insn 80 79 81 8 node.h:172 (set (reg:SI 108)
+        (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                (const_int -20 [0xffffffffffffffec])) [0 t+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 81 80 82 8 node.h:172 (set (reg:SI 4 si)
+        (reg:SI 108)) 47 {*movsi_1} (nil))
+
+(insn 82 81 83 8 node.h:172 (set (reg:DI 5 di)
+        (reg/f:DI 89 [ D.49816 ])) 89 {*movdi_1_rex64} (nil))
+
+(insn 83 82 84 8 node.h:172 (set (reg:QI 0 ax)
+        (const_int 0 [0x0])) 62 {*movqi_1} (nil))
+
+(call_insn 84 83 85 8 node.h:172 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f2f6d752000 printf>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:QI 0 ax))
+        (expr_list:REG_DEP_TRUE (use (reg:DI 5 di))
+            (expr_list:REG_DEP_TRUE (use (reg:SI 4 si))
+                (nil)))))
+
+(insn 85 84 125 8 node.h:173 (set (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])
+        (const_int 0 [0x0])) 47 {*movsi_1} (nil))
+
+(jump_insn 125 85 126 8 node.h:173 (set (pc)
+        (label_ref 110)) -1 (nil)
+ -> 110)
+;; End of basic block 8 -> ( 10)
+
+;; Succ edge  10 [100.0%] 
+
+(barrier 126 125 114)
+
+;; Start of basic block ( 10) -> 9
+;; Pred edge  10
+(code_label 114 126 88 9 54 "" [1 uses])
+
+(note 88 114 89 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+
+(insn 89 88 90 9 node.h:176 (set (reg/f:DI 92 [ network.16 ])
+        (mem/f/c/i:DI (symbol_ref:DI ("network")  <var_decl 0x7f2f6c4b8be0 network>) [0 network+0 S8 A64])) 89 {*movdi_1_rex64} (nil))
+
+(insn 90 89 91 9 node.h:176 (set (reg:DI 93 [ D.49818 ])
+        (zero_extend:DI (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                    (const_int -20 [0xffffffffffffffec])) [0 t+0 S4 A32]))) 123 {zero_extendsidi2_rex64} (nil))
+
+(insn 91 90 92 9 node.h:176 (parallel [
+            (set (reg:DI 94 [ D.49819 ])
+                (ashift:DI (reg:DI 93 [ D.49818 ])
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) 489 {*ashldi3_1_rex64} (nil))
+
+(insn 92 91 93 9 node.h:176 (parallel [
+            (set (reg/f:DI 95 [ D.49820 ])
+                (plus:DI (reg/f:DI 92 [ network.16 ])
+                    (reg:DI 94 [ D.49819 ])))
+            (clobber (reg:CC 17 flags))
+        ]) 253 {*adddi_1} (nil))
+
+(insn 93 92 94 9 node.h:176 (set (reg/f:DI 96 [ D.49821 ])
+        (mem/f:DI (reg/f:DI 95 [ D.49820 ]) [0 S8 A64])) 89 {*movdi_1_rex64} (nil))
+
+(insn 94 93 95 9 node.h:176 (set (reg:SI 97 [ network_size.17 ])
+        (mem/c/i:SI (symbol_ref:DI ("network_size") [flags 0x2]  <var_decl 0x7f2f6c4b8aa0 network_size>) [0 network_size+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 95 94 96 9 node.h:176 (parallel [
+            (set (reg:SI 98 [ D.49823 ])
+                (minus:SI (reg:SI 97 [ network_size.17 ])
+                    (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                            (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])))
+            (clobber (reg:CC 17 flags))
+        ]) 291 {*subsi_1} (nil))
+
+(insn 96 95 97 9 node.h:176 (parallel [
+            (set (reg:SI 99 [ D.49824 ])
+                (plus:SI (reg:SI 98 [ D.49823 ])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 252 {*addsi_1} (nil))
+
+(insn 97 96 98 9 node.h:176 (set (reg:DI 100 [ D.49825 ])
+        (zero_extend:DI (reg:SI 99 [ D.49824 ]))) 123 {zero_extendsidi2_rex64} (nil))
+
+(insn 98 97 99 9 node.h:176 (parallel [
+            (set (reg:DI 101 [ D.49826 ])
+                (ashift:DI (reg:DI 100 [ D.49825 ])
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) 489 {*ashldi3_1_rex64} (nil))
+
+(insn 99 98 100 9 node.h:176 (parallel [
+            (set (reg/f:DI 102 [ D.49827 ])
+                (plus:DI (reg/f:DI 96 [ D.49821 ])
+                    (reg:DI 101 [ D.49826 ])))
+            (clobber (reg:CC 17 flags))
+        ]) 253 {*adddi_1} (nil))
+
+(insn 100 99 101 9 node.h:175 (set (reg:DF 103 [ D.49828 ])
+        (mem:DF (reg/f:DI 102 [ D.49827 ]) [0 S8 A64])) 104 {*movdf_integer_rex64} (nil))
+
+(insn 101 100 102 9 node.h:175 (set (reg:SI 109)
+        (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 102 101 103 9 node.h:175 (parallel [
+            (set (reg:SI 104 [ D.49829 ])
+                (plus:SI (reg:SI 109)
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 252 {*addsi_1} (expr_list:REG_EQUAL (plus:SI (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                    (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])
+            (const_int 1 [0x1]))
+        (nil)))
+
+(insn 103 102 104 9 node.h:175 (set (reg/f:DI 105 [ D.49830 ])
+        (symbol_ref/f:DI ("*.LC19") [flags 0x2]  <string_cst 0x7f2f6b9c8f60>)) 89 {*movdi_1_rex64} (nil))
+
+(insn 104 103 105 9 node.h:175 (set (reg:DF 21 xmm0)
+        (reg:DF 103 [ D.49828 ])) 104 {*movdf_integer_rex64} (nil))
+
+(insn 105 104 106 9 node.h:175 (set (reg:SI 4 si)
+        (reg:SI 104 [ D.49829 ])) 47 {*movsi_1} (nil))
+
+(insn 106 105 107 9 node.h:175 (set (reg:DI 5 di)
+        (reg/f:DI 105 [ D.49830 ])) 89 {*movdi_1_rex64} (nil))
+
+(insn 107 106 108 9 node.h:175 (set (reg:QI 0 ax)
+        (const_int 1 [0x1])) 62 {*movqi_1} (nil))
+
+(call_insn 108 107 109 9 node.h:175 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f2f6d752000 printf>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:QI 0 ax))
+        (expr_list:REG_DEP_TRUE (use (reg:DI 5 di))
+            (expr_list:REG_DEP_TRUE (use (reg:SI 4 si))
+                (expr_list:REG_DEP_TRUE (use (reg:DF 21 xmm0))
+                    (nil))))))
+
+(insn 109 108 110 9 node.h:173 (parallel [
+            (set (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                        (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])
+                (plus:SI (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                            (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 252 {*addsi_1} (nil))
+;; End of basic block 9 -> ( 10)
+
+;; Succ edge  10 (fallthru)
+
+;; Start of basic block ( 9 8) -> 10
+;; Pred edge  9 (fallthru)
+;; Pred edge  8 [100.0%] 
+(code_label 110 109 111 10 53 "" [1 uses])
+
+(note 111 110 112 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+
+(insn 112 111 113 10 node.h:173 (set (reg:SI 90 [ output_list_size.18 ])
+        (mem/c/i:SI (symbol_ref:DI ("output_list_size")  <var_decl 0x7f2f6c4b8dc0 output_list_size>) [0 output_list_size+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 113 112 115 10 node.h:173 (set (reg:SI 91 [ output_list_size.19 ])
+        (reg:SI 90 [ output_list_size.18 ])) 47 {*movsi_1} (nil))
+
+(insn 115 113 116 10 node.h:173 (set (reg:CC 17 flags)
+        (compare:CC (reg:SI 91 [ output_list_size.19 ])
+            (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                    (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 116 115 127 10 node.h:173 (set (pc)
+        (if_then_else (gtu (reg:CC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 114)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 114)
+;; End of basic block 10 -> ( 9 12)
+
+;; Succ edge  9
+;; Succ edge  12 (fallthru)
+
+;; Start of basic block ( 10) -> 12
+;; Pred edge  10 (fallthru)
+(note 127 116 128 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+
+(jump_insn 128 127 129 12 (set (pc)
+        (label_ref 119)) -1 (nil)
+ -> 119)
+;; End of basic block 12 -> ( 11)
+
+;; Succ edge  11 [100.0%] 
+
+(barrier 129 128 131)
+
+;; Start of basic block ( 3) -> 13
+;; Pred edge  3
+(code_label 131 129 130 13 55 "" [1 uses])
+
+(note 130 131 132 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+
+(insn 132 130 119 13 node.h:155 (const_int 0 [0x0]) -1 (nil))
+;; End of basic block 13 -> ( 11)
+
+;; Succ edge  11 [100.0%]  (fallthru)
+
+;; Start of basic block ( 4 13 12) -> 11
+;; Pred edge  4 [100.0%] 
+;; Pred edge  13 [100.0%]  (fallthru)
+;; Pred edge  12 [100.0%] 
+(code_label 119 132 120 11 47 "" [2 uses])
+
+(note 120 119 0 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+;; End of basic block 11 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+
+
+;; Function main (main)
+
+(note 1 0 5 NOTE_INSN_DELETED)
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY (fallthru)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(insn 2 5 3 2 test.c:6 (set (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                (const_int -20 [0xffffffffffffffec])) [0 argc+0 S4 A32])
+        (reg:SI 5 di [ argc ])) 47 {*movsi_1} (nil))
+
+(insn 3 2 4 2 test.c:6 (set (mem/f/c/i:DI (plus:DI (reg/f:DI 20 frame)
+                (const_int -32 [0xffffffffffffffe0])) [0 argv+0 S8 A64])
+        (reg:DI 4 si [ argv ])) 89 {*movdi_1_rex64} (nil))
+
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 7 4 8 2 test.c:8 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                    (const_int -20 [0xffffffffffffffec])) [0 argc+0 S4 A32])
+            (const_int 2 [0x2]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 8 7 9 2 test.c:8 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 20)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 20)
+;; End of basic block 2 -> ( 3 4)
+
+;; Succ edge  3 (fallthru)
+;; Succ edge  4
+
+;; Start of basic block ( 2) -> 3
+;; Pred edge  2 (fallthru)
+(note 9 8 10 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 10 9 11 3 test.c:10 (set (reg/f:DI 68)
+        (mem/f/c/i:DI (plus:DI (reg/f:DI 20 frame)
+                (const_int -32 [0xffffffffffffffe0])) [0 argv+0 S8 A64])) 89 {*movdi_1_rex64} (nil))
+
+(insn 11 10 12 3 test.c:10 (set (reg/f:DI 59 [ D.49765 ])
+        (mem/f:DI (reg/f:DI 68) [0 S8 A64])) 89 {*movdi_1_rex64} (nil))
+
+(insn 12 11 13 3 test.c:10 (set (reg/f:DI 60 [ D.49766 ])
+        (symbol_ref/f:DI ("*.LC20") [flags 0x2]  <string_cst 0x7f2f6b9d3d90>)) 89 {*movdi_1_rex64} (nil))
+
+(insn 13 12 14 3 test.c:10 (set (reg:DI 4 si)
+        (reg/f:DI 59 [ D.49765 ])) 89 {*movdi_1_rex64} (nil))
+
+(insn 14 13 15 3 test.c:10 (set (reg:DI 5 di)
+        (reg/f:DI 60 [ D.49766 ])) 89 {*movdi_1_rex64} (nil))
+
+(insn 15 14 16 3 test.c:10 (set (reg:QI 0 ax)
+        (const_int 0 [0x0])) 62 {*movqi_1} (nil))
+
+(call_insn 16 15 17 3 test.c:10 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f2f6d752000 printf>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:QI 0 ax))
+        (expr_list:REG_DEP_TRUE (use (reg:DI 5 di))
+            (expr_list:REG_DEP_TRUE (use (reg:DI 4 si))
+                (nil)))))
+
+(insn 17 16 85 3 test.c:11 (set (reg:SI 58 [ D.49767 ])
+        (const_int 1 [0x1])) 47 {*movsi_1} (nil))
+
+(jump_insn 85 17 86 3 test.c:11 (set (pc)
+        (label_ref 73)) -1 (nil)
+ -> 73)
+;; End of basic block 3 -> ( 14)
+
+;; Succ edge  14 [100.0%] 
+
+(barrier 86 85 20)
+
+;; Start of basic block ( 2) -> 4
+;; Pred edge  2
+(code_label 20 86 21 4 57 "" [1 uses])
+
+(note 21 20 22 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 22 21 23 4 test.c:16 (set (reg:SI 61 [ debug.0 ])
+        (mem/c/i:SI (symbol_ref:DI ("debug") [flags 0x2]  <var_decl 0x7f2f6c4b8b40 debug>) [0 debug+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 23 22 24 4 test.c:16 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 61 [ debug.0 ])
+            (const_int 0 [0x0]))) 2 {*cmpsi_ccno_1} (nil))
+
+(jump_insn 24 23 25 4 test.c:16 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 28)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 28)
+;; End of basic block 4 -> ( 5 6)
+
+;; Succ edge  5 (fallthru)
+;; Succ edge  6
+
+;; Start of basic block ( 4) -> 5
+;; Pred edge  4 (fallthru)
+(note 25 24 26 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 26 25 27 5 test.c:16 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC21") [flags 0x2]  <string_cst 0x7f2f6b9d3dc8>)) 89 {*movdi_1_rex64} (nil))
+
+(call_insn 27 26 28 5 test.c:16 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f2f6d752700 __builtin_puts>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:DI 5 di))
+        (nil)))
+;; End of basic block 5 -> ( 6)
+
+;; Succ edge  6 (fallthru)
+
+;; Start of basic block ( 4 5) -> 6
+;; Pred edge  4
+;; Pred edge  5 (fallthru)
+(code_label 28 27 29 6 59 "" [1 uses])
+
+(note 29 28 30 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+(insn 30 29 31 6 test.c:19 (set (mem/c/i:SI (symbol_ref:DI ("input_list_size")  <var_decl 0x7f2f6c4b8d20 input_list_size>) [0 input_list_size+0 S4 A32])
+        (const_int 55 [0x37])) 47 {*movsi_1} (nil))
+
+(insn 31 30 32 6 test.c:20 (set (mem/c/i:SI (symbol_ref:DI ("output_list_size")  <var_decl 0x7f2f6c4b8dc0 output_list_size>) [0 output_list_size+0 S4 A32])
+        (const_int 15 [0xf])) 47 {*movsi_1} (nil))
+
+(insn 32 31 33 6 test.c:21 (set (mem/c/i:SI (symbol_ref:DI ("historylength") [flags 0x2]  <var_decl 0x7f2f6c4b8a00 historylength>) [0 historylength+0 S4 A32])
+        (const_int 100 [0x64])) 47 {*movsi_1} (nil))
+
+(insn 33 32 34 6 test.c:22 (set (mem/c/i:SI (symbol_ref:DI ("network_size") [flags 0x2]  <var_decl 0x7f2f6c4b8aa0 network_size>) [0 network_size+0 S4 A32])
+        (const_int 100 [0x64])) 47 {*movsi_1} (nil))
+
+(insn 34 33 35 6 test.c:23 (set (reg:QI 0 ax)
+        (const_int 0 [0x0])) 62 {*movqi_1} (nil))
+
+(call_insn 35 34 36 6 test.c:23 (call (mem:QI (symbol_ref:DI ("network_init") [flags 0x3]  <function_decl 0x7f2f6c26ea00 network_init>) [0 S1 A8])
+        (const_int 0 [0x0])) 639 {*call_0} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:QI 0 ax))
+        (nil)))
+
+(insn 36 35 37 6 test.c:24 (set (reg/f:DI 62 [ network.1 ])
+        (mem/f/c/i:DI (symbol_ref:DI ("network")  <var_decl 0x7f2f6c4b8be0 network>) [0 network+0 S8 A64])) 89 {*movdi_1_rex64} (nil))
+
+(insn 37 36 38 6 test.c:24 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg/f:DI 62 [ network.1 ])
+            (const_int 0 [0x0]))) 3 {*cmpdi_ccno_1} (nil))
+
+(jump_insn 38 37 39 6 test.c:24 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 51)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 51)
+;; End of basic block 6 -> ( 7 10)
+
+;; Succ edge  7 (fallthru)
+;; Succ edge  10
+
+;; Start of basic block ( 6) -> 7
+;; Pred edge  6 (fallthru)
+(note 39 38 40 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+(insn 40 39 41 7 test.c:26 (set (reg:SI 63 [ debug.2 ])
+        (mem/c/i:SI (symbol_ref:DI ("debug") [flags 0x2]  <var_decl 0x7f2f6c4b8b40 debug>) [0 debug+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 41 40 42 7 test.c:26 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 63 [ debug.2 ])
+            (const_int 0 [0x0]))) 2 {*cmpsi_ccno_1} (nil))
+
+(jump_insn 42 41 43 7 test.c:26 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 46)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 46)
+;; End of basic block 7 -> ( 8 9)
+
+;; Succ edge  8 (fallthru)
+;; Succ edge  9
+
+;; Start of basic block ( 7) -> 8
+;; Pred edge  7 (fallthru)
+(note 43 42 44 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+
+(insn 44 43 45 8 test.c:26 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC22") [flags 0x2]  <string_cst 0x7f2f6b9de0c0>)) 89 {*movdi_1_rex64} (nil))
+
+(call_insn 45 44 46 8 test.c:26 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f2f6d752700 __builtin_puts>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:DI 5 di))
+        (nil)))
+;; End of basic block 8 -> ( 9)
+
+;; Succ edge  9 (fallthru)
+
+;; Start of basic block ( 7 8) -> 9
+;; Pred edge  7
+;; Pred edge  8 (fallthru)
+(code_label 46 45 47 9 61 "" [1 uses])
+
+(note 47 46 48 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+
+(insn 48 47 87 9 test.c:28 (set (reg:SI 58 [ D.49767 ])
+        (const_int 1 [0x1])) 47 {*movsi_1} (nil))
+
+(jump_insn 87 48 88 9 test.c:28 (set (pc)
+        (label_ref 73)) -1 (nil)
+ -> 73)
+;; End of basic block 9 -> ( 14)
+
+;; Succ edge  14 [100.0%] 
+
+(barrier 88 87 51)
+
+;; Start of basic block ( 6) -> 10
+;; Pred edge  6
+(code_label 51 88 52 10 60 "" [1 uses])
+
+(note 52 51 53 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+
+(insn 53 52 89 10 test.c:30 (set (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])
+        (const_int 0 [0x0])) 47 {*movsi_1} (nil))
+
+(jump_insn 89 53 90 10 test.c:30 (set (pc)
+        (label_ref 62)) -1 (nil)
+ -> 62)
+;; End of basic block 10 -> ( 12)
+
+;; Succ edge  12 [100.0%] 
+
+(barrier 90 89 66)
+
+;; Start of basic block ( 12) -> 11
+;; Pred edge  12
+(code_label 66 90 56 11 63 "" [1 uses])
+
+(note 56 66 57 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+
+(insn 57 56 58 11 test.c:32 (set (reg:SI 69)
+        (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 58 57 59 11 test.c:32 (parallel [
+            (set (reg:SI 66 [ D.49777 ])
+                (plus:SI (reg:SI 69)
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 252 {*addsi_1} (expr_list:REG_EQUAL (plus:SI (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                    (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])
+            (const_int 1 [0x1]))
+        (nil)))
+
+(insn 59 58 60 11 test.c:32 (set (reg:SI 5 di)
+        (reg:SI 66 [ D.49777 ])) 47 {*movsi_1} (nil))
+
+(call_insn 60 59 61 11 test.c:32 (call (mem:QI (symbol_ref:DI ("network_forward") [flags 0x3]  <function_decl 0x7f2f6c26ed00 network_forward>) [0 S1 A8])
+        (const_int 0 [0x0])) 639 {*call_0} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:SI 5 di))
+        (nil)))
+
+(insn 61 60 62 11 test.c:30 (parallel [
+            (set (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                        (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])
+                (plus:SI (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                            (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 252 {*addsi_1} (nil))
+;; End of basic block 11 -> ( 12)
+
+;; Succ edge  12 (fallthru)
+
+;; Start of basic block ( 11 10) -> 12
+;; Pred edge  11 (fallthru)
+;; Pred edge  10 [100.0%] 
+(code_label 62 61 63 12 62 "" [1 uses])
+
+(note 63 62 64 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+
+(insn 64 63 65 12 test.c:30 (set (reg:SI 64 [ historylength.3 ])
+        (mem/c/i:SI (symbol_ref:DI ("historylength") [flags 0x2]  <var_decl 0x7f2f6c4b8a00 historylength>) [0 historylength+0 S4 A32])) 47 {*movsi_1} (nil))
+
+(insn 65 64 67 12 test.c:30 (set (reg:SI 65 [ historylength.4 ])
+        (reg:SI 64 [ historylength.3 ])) 47 {*movsi_1} (nil))
+
+(insn 67 65 68 12 test.c:30 (set (reg:CC 17 flags)
+        (compare:CC (reg:SI 65 [ historylength.4 ])
+            (mem/c/i:SI (plus:DI (reg/f:DI 20 frame)
+                    (const_int -4 [0xfffffffffffffffc])) [0 i+0 S4 A32]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 68 67 69 12 test.c:30 (set (pc)
+        (if_then_else (gtu (reg:CC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 66)
+            (pc))) 616 {*jcc_1} (nil)
+ -> 66)
+;; End of basic block 12 -> ( 11 13)
+
+;; Succ edge  11
+;; Succ edge  13 (fallthru)
+
+;; Start of basic block ( 12) -> 13
+;; Pred edge  12 (fallthru)
+(note 69 68 70 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+
+(insn 70 69 71 13 test.c:34 (set (reg:QI 0 ax)
+        (const_int 0 [0x0])) 62 {*movqi_1} (nil))
+
+(call_insn 71 70 72 13 test.c:34 (call (mem:QI (symbol_ref:DI ("network_term") [flags 0x3]  <function_decl 0x7f2f6c26eb00 network_term>) [0 S1 A8])
+        (const_int 0 [0x0])) 639 {*call_0} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:QI 0 ax))
+        (nil)))
+
+(insn 72 71 73 13 test.c:35 (set (reg:SI 58 [ D.49767 ])
+        (const_int 0 [0x0])) 47 {*movsi_1} (nil))
+;; End of basic block 13 -> ( 14)
+
+;; Succ edge  14 (fallthru)
+
+;; Start of basic block ( 13 3 9) -> 14
+;; Pred edge  13 (fallthru)
+;; Pred edge  3 [100.0%] 
+;; Pred edge  9 [100.0%] 
+(code_label 73 72 74 14 58 "" [2 uses])
+
+(note 74 73 75 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+
+(insn 75 74 79 14 test.c:35 (set (reg:SI 67 [ <retval> ])
+        (reg:SI 58 [ D.49767 ])) 47 {*movsi_1} (nil))
+
+(insn 79 75 82 14 test.c:36 (set (reg/i:SI 0 ax)
+        (reg:SI 67 [ <retval> ])) 47 {*movsi_1} (nil))
+
+(insn 82 79 0 14 test.c:36 (use (reg/i:SI 0 ax)) -1 (nil))
+;; End of basic block 14 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+

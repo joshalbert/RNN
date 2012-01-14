@@ -1,0 +1,155 @@
+
+;; Function main (main)
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY (fallthru)
+(note 3 0 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 5 2 6 2 cblas_test.c:6 (set (reg:DF 62)
+        (mem/u/c/i:DF (symbol_ref/u:DI ("*.LC0") [flags 0x2]) [0 S8 A64])) 104 {*movdf_integer_rex64} (nil))
+
+(insn 6 5 7 2 cblas_test.c:6 (set (mem/s/j:DF (plus:DI (reg/f:DI 20 frame)
+                (const_int -48 [0xffffffffffffffd0])) [0 x+0 S8 A128])
+        (reg:DF 62)) 104 {*movdf_integer_rex64} (nil))
+
+(insn 7 6 8 2 cblas_test.c:6 (set (reg:DF 63)
+        (mem/u/c/i:DF (symbol_ref/u:DI ("*.LC1") [flags 0x2]) [0 S8 A64])) 104 {*movdf_integer_rex64} (nil))
+
+(insn 8 7 9 2 cblas_test.c:6 (set (mem/s/j:DF (plus:DI (reg/f:DI 20 frame)
+                (const_int -40 [0xffffffffffffffd8])) [0 x+8 S8 A64])
+        (reg:DF 63)) 104 {*movdf_integer_rex64} (nil))
+
+(insn 9 8 10 2 cblas_test.c:6 (set (reg:DF 64)
+        (mem/u/c/i:DF (symbol_ref/u:DI ("*.LC2") [flags 0x2]) [0 S8 A64])) 104 {*movdf_integer_rex64} (nil))
+
+(insn 10 9 11 2 cblas_test.c:6 (set (mem/s/j:DF (plus:DI (reg/f:DI 20 frame)
+                (const_int -32 [0xffffffffffffffe0])) [0 x+16 S8 A128])
+        (reg:DF 64)) 104 {*movdf_integer_rex64} (nil))
+
+(insn 11 10 12 2 cblas_test.c:6 (set (reg:DF 65)
+        (mem/u/c/i:DF (symbol_ref/u:DI ("*.LC3") [flags 0x2]) [0 S8 A64])) 104 {*movdf_integer_rex64} (nil))
+
+(insn 12 11 13 2 cblas_test.c:6 (set (mem/s/j:DF (plus:DI (reg/f:DI 20 frame)
+                (const_int -24 [0xffffffffffffffe8])) [0 x+24 S8 A64])
+        (reg:DF 65)) 104 {*movdf_integer_rex64} (nil))
+
+(insn 13 12 14 2 cblas_test.c:6 (set (reg:DF 66)
+        (mem/u/c/i:DF (symbol_ref/u:DI ("*.LC4") [flags 0x2]) [0 S8 A64])) 104 {*movdf_integer_rex64} (nil))
+
+(insn 14 13 15 2 cblas_test.c:6 (set (mem/s/j:DF (plus:DI (reg/f:DI 20 frame)
+                (const_int -16 [0xfffffffffffffff0])) [0 x+32 S8 A128])
+        (reg:DF 66)) 104 {*movdf_integer_rex64} (nil))
+
+(insn 15 14 16 2 cblas_test.c:7 (set (reg:DF 67)
+        (mem/u/c/i:DF (symbol_ref/u:DI ("*.LC0") [flags 0x2]) [0 S8 A64])) 104 {*movdf_integer_rex64} (nil))
+
+(insn 16 15 17 2 cblas_test.c:7 (set (mem/s/j:DF (plus:DI (reg/f:DI 20 frame)
+                (const_int -96 [0xffffffffffffffa0])) [0 y+0 S8 A128])
+        (reg:DF 67)) 104 {*movdf_integer_rex64} (nil))
+
+(insn 17 16 18 2 cblas_test.c:7 (set (reg:DF 68)
+        (mem/u/c/i:DF (symbol_ref/u:DI ("*.LC0") [flags 0x2]) [0 S8 A64])) 104 {*movdf_integer_rex64} (nil))
+
+(insn 18 17 19 2 cblas_test.c:7 (set (mem/s/j:DF (plus:DI (reg/f:DI 20 frame)
+                (const_int -88 [0xffffffffffffffa8])) [0 y+8 S8 A64])
+        (reg:DF 68)) 104 {*movdf_integer_rex64} (nil))
+
+(insn 19 18 20 2 cblas_test.c:7 (set (reg:DF 69)
+        (mem/u/c/i:DF (symbol_ref/u:DI ("*.LC0") [flags 0x2]) [0 S8 A64])) 104 {*movdf_integer_rex64} (nil))
+
+(insn 20 19 21 2 cblas_test.c:7 (set (mem/s/j:DF (plus:DI (reg/f:DI 20 frame)
+                (const_int -80 [0xffffffffffffffb0])) [0 y+16 S8 A128])
+        (reg:DF 69)) 104 {*movdf_integer_rex64} (nil))
+
+(insn 21 20 22 2 cblas_test.c:7 (set (reg:DF 70)
+        (mem/u/c/i:DF (symbol_ref/u:DI ("*.LC0") [flags 0x2]) [0 S8 A64])) 104 {*movdf_integer_rex64} (nil))
+
+(insn 22 21 23 2 cblas_test.c:7 (set (mem/s/j:DF (plus:DI (reg/f:DI 20 frame)
+                (const_int -72 [0xffffffffffffffb8])) [0 y+24 S8 A64])
+        (reg:DF 70)) 104 {*movdf_integer_rex64} (nil))
+
+(insn 23 22 24 2 cblas_test.c:7 (set (reg:DF 71)
+        (mem/u/c/i:DF (symbol_ref/u:DI ("*.LC0") [flags 0x2]) [0 S8 A64])) 104 {*movdf_integer_rex64} (nil))
+
+(insn 24 23 25 2 cblas_test.c:7 (set (mem/s/j:DF (plus:DI (reg/f:DI 20 frame)
+                (const_int -64 [0xffffffffffffffc0])) [0 y+32 S8 A128])
+        (reg:DF 71)) 104 {*movdf_integer_rex64} (nil))
+
+(insn 25 24 26 2 cblas_test.c:8 (parallel [
+            (set (reg:DI 72)
+                (plus:DI (reg/f:DI 20 frame)
+                    (const_int -96 [0xffffffffffffffa0])))
+            (clobber (reg:CC 17 flags))
+        ]) 253 {*adddi_1} (nil))
+
+(insn 26 25 27 2 cblas_test.c:8 (parallel [
+            (set (reg:DI 73)
+                (plus:DI (reg/f:DI 20 frame)
+                    (const_int -48 [0xffffffffffffffd0])))
+            (clobber (reg:CC 17 flags))
+        ]) 253 {*adddi_1} (nil))
+
+(insn 27 26 28 2 cblas_test.c:8 (set (reg:SI 37 r8)
+        (const_int 2 [0x2])) 47 {*movsi_1} (nil))
+
+(insn 28 27 29 2 cblas_test.c:8 (set (reg:DI 2 cx)
+        (reg:DI 72)) 89 {*movdi_1_rex64} (nil))
+
+(insn 29 28 30 2 cblas_test.c:8 (set (reg:SI 1 dx)
+        (const_int 2 [0x2])) 47 {*movsi_1} (nil))
+
+(insn 30 29 31 2 cblas_test.c:8 (set (reg:DI 4 si)
+        (reg:DI 73)) 89 {*movdi_1_rex64} (nil))
+
+(insn 31 30 32 2 cblas_test.c:8 (set (reg:SI 5 di)
+        (const_int 2 [0x2])) 47 {*movsi_1} (nil))
+
+(call_insn 32 31 33 2 cblas_test.c:8 (set (reg:DF 21 xmm0)
+        (call (mem:QI (symbol_ref:DI ("cblas_ddot") [flags 0x41]  <function_decl 0x7fd89998f600 cblas_ddot>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:SI 5 di))
+        (expr_list:REG_DEP_TRUE (use (reg:DI 4 si))
+            (expr_list:REG_DEP_TRUE (use (reg:SI 1 dx))
+                (expr_list:REG_DEP_TRUE (use (reg:DI 2 cx))
+                    (expr_list:REG_DEP_TRUE (use (reg:SI 37 r8))
+                        (nil)))))))
+
+(insn 33 32 34 2 cblas_test.c:8 (set (reg:DF 58 [ D.4915 ])
+        (reg:DF 21 xmm0)) 104 {*movdf_integer_rex64} (nil))
+
+(insn 34 33 35 2 cblas_test.c:8 (set (reg/f:DI 59 [ D.4916 ])
+        (symbol_ref/f:DI ("*.LC5") [flags 0x2]  <string_cst 0x7fd8999e0c80>)) 89 {*movdi_1_rex64} (nil))
+
+(insn 35 34 36 2 cblas_test.c:8 (set (reg:DF 21 xmm0)
+        (reg:DF 58 [ D.4915 ])) 104 {*movdf_integer_rex64} (nil))
+
+(insn 36 35 37 2 cblas_test.c:8 (set (reg:DI 5 di)
+        (reg/f:DI 59 [ D.4916 ])) 89 {*movdi_1_rex64} (nil))
+
+(insn 37 36 38 2 cblas_test.c:8 (set (reg:QI 0 ax)
+        (const_int 1 [0x1])) 62 {*movqi_1} (nil))
+
+(call_insn 38 37 39 2 cblas_test.c:8 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7fd89abfb000 printf>) [0 S1 A8])
+            (const_int 0 [0x0]))) 901 {*call_value_0_rex64} (nil)
+    (expr_list:REG_DEP_TRUE (use (reg:QI 0 ax))
+        (expr_list:REG_DEP_TRUE (use (reg:DI 5 di))
+            (expr_list:REG_DEP_TRUE (use (reg:DF 21 xmm0))
+                (nil)))))
+
+(insn 39 38 40 2 cblas_test.c:9 (set (reg:SI 60 [ D.4917 ])
+        (const_int 0 [0x0])) 47 {*movsi_1} (nil))
+
+(insn 40 39 44 2 cblas_test.c:9 (set (reg:SI 61 [ <retval> ])
+        (reg:SI 60 [ D.4917 ])) 47 {*movsi_1} (nil))
+
+(insn 44 40 47 2 cblas_test.c:10 (set (reg/i:SI 0 ax)
+        (reg:SI 61 [ <retval> ])) 47 {*movsi_1} (nil))
+
+(insn 47 44 0 2 cblas_test.c:10 (use (reg/i:SI 0 ax)) -1 (nil))
+;; End of basic block 2 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+

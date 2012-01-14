@@ -1,0 +1,27 @@
+
+;; Function W_init (W_init)
+
+
+;; Function W_term (W_term)
+
+
+;; Function get_input (get_input)
+
+
+;; Function update_input (update_input)
+
+
+;; Function network_init (network_init)
+
+
+;; Function network_term (network_term)
+
+
+;; Function sigmoid (sigmoid)
+
+
+;; Function network_forward (network_forward)
+
+
+;; Function main (main)
+

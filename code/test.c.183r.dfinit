@@ -1,0 +1,63 @@
+
+;; Function W_init (W_init)
+
+verify found no changes in insn with uid = 10.
+verify found no changes in insn with uid = 20.
+verify found no changes in insn with uid = 33.
+verify found no changes in insn with uid = 66.
+
+;; Function W_term (W_term)
+
+verify found no changes in insn with uid = 10.
+verify found no changes in insn with uid = 15.
+verify found no changes in insn with uid = 21.
+
+;; Function get_input (get_input)
+
+verify found no changes in insn with uid = 52.
+
+;; Function update_input (update_input)
+
+verify found no changes in insn with uid = 28.
+
+;; Function network_init (network_init)
+
+verify found no changes in insn with uid = 56.
+verify found no changes in insn with uid = 63.
+verify found no changes in insn with uid = 80.
+verify found no changes in insn with uid = 132.
+verify found no changes in insn with uid = 140.
+verify found no changes in insn with uid = 144.
+verify found no changes in insn with uid = 150.
+verify found no changes in insn with uid = 171.
+verify found no changes in insn with uid = 175.
+
+;; Function network_term (network_term)
+
+verify found no changes in insn with uid = 10.
+verify found no changes in insn with uid = 23.
+verify found no changes in insn with uid = 35.
+verify found no changes in insn with uid = 41.
+verify found no changes in insn with uid = 45.
+
+;; Function sigmoid (sigmoid)
+
+verify found no changes in insn with uid = 10.
+
+;; Function network_forward (network_forward)
+
+verify found no changes in insn with uid = 20.
+verify found no changes in insn with uid = 32.
+verify found no changes in insn with uid = 65.
+verify found no changes in insn with uid = 68.
+verify found no changes in insn with uid = 84.
+verify found no changes in insn with uid = 108.
+
+;; Function main (main)
+
+verify found no changes in insn with uid = 16.
+verify found no changes in insn with uid = 27.
+verify found no changes in insn with uid = 35.
+verify found no changes in insn with uid = 45.
+verify found no changes in insn with uid = 60.
+verify found no changes in insn with uid = 71.
